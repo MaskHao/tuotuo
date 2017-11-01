@@ -1,0 +1,64 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+#wrap {
+  font-family: 微软雅黑;
+  padding-top: 150px; }
+
+#warn {
+  font-size: 36px;
+  background-color: #ff7070;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  line-height: 90px;
+  color: #fff;
+  text-align: center;
+  animation: canva 2s infinite; }
+
+.promot {
+  color: #666;
+  padding-top: 70px;
+  font-size: 15px;
+  margin-bottom: 1em; }
+
+#container {
+  width: 96%;
+  margin-left: 2%; }
+  #container input {
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    background-color: #ffdfdf;
+    border: 1px solid #ff6161;
+    border-radius: 10px;
+    font-size: 36px;
+    text-indent: 1em; }
+  #container input:nth-of-type(2) {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 10px; }
+
+.submit {
+  text-indent: 0em;
+  margin-top: 85px;
+  background-color: #32c9ba; }
+
+.tel {
+  text-align: center; }
+  .tel span {
+    color: #32c9ba; }
+
+@keyframes canva {
+  0% {
+    transform: translateY(-20PX); }
+  25% {
+    transform: translateY(0px); }
+  50% {
+    transform: translateY(20px); }
+  100% {
+    transform: translateY(0px); } }

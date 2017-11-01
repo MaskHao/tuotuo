@@ -1,0 +1,44 @@
+@keyframes flash {
+  from {
+    opacity: .3;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: .3;
+  }
+}
+.flash {
+  animation: flash 2s ease infinite;
+}
+
+@keyframes rotateLeft {
+  from {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(-180deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+.rotateLeft {
+  animation: rotateLeft 5s linear infinite;
+}
+
+@keyframes rotateRight {
+  from {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.rotateRight {
+  animation: rotateRight 5s linear infinite;
+}

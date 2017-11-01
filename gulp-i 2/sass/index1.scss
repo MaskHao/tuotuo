@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;}
+$color: red green blue  !default;
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+@mixin heightLh($width,$height){
+  width: $width;
+  height:$height;
+  line-height:$height;
+}
+@mixin borderStyle($border:1px solid #eee,$radio:10px){
+  border:$border;
+  border-radius: $radio;
+}
+
+
+#wrap{
+  //font-size: 35px;
+  font-family: 微软雅黑;
+  padding-top: 150px;
+}
+#warn{
+  font-size: 36px;
+  background-color: #ff7070;
+  @include opacity(90);
+  position: fixed;
+  @include heightLh(100%,90px);
+  color: #fff;
+  text-align: center;
+  animation: canva 2s infinite;
+}
+.promot{
+  color: #666;
+  padding-top:70px;
+  font-size: 15px;
+  margin-bottom: 1em;
+}
+#container{
+  width:96% ;
+  margin-left: 2%;
+
+  input{
+    width: 100%;
+    height:100px;
+    margin-top: 15px;
+    background-color: #ffdfdf;
+    @include borderStyle(1px solid #ff6161);
+    font-size: 36px;
+    text-indent: 1em;
+  }
+  input:nth-of-type(2){
+    background-color: #eee;
+    @include borderStyle(1px solid #ccc);
+
+  }
+}
+.submit{
+  text-indent: 0em;
+  margin-top: 85px;
+  background-color: #32c9ba;
+}
+.tel{
+  text-align: center;
+  span{
+    color: #32c9ba;
+  }
+}
+
+
+@keyframes canva{
+  0%{
+    transform: translateY(-20PX);
+  }
+  25%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+

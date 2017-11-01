@@ -1,0 +1,41 @@
+@import "normalize","animate";
+
+
+$imgsPath: "../../images/";
+%bg-contain{
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+html,body{
+  height: 100%;
+}
+html{
+  font-size: 625%;
+}
+body{
+  font-size: 10%;
+  overflow: hidden;
+}
+.rank-container{
+  height: 100%;
+  background-image: url($imgsPath + 'rank-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1px;
+  //perspective: 5rem;
+  .rank-main{
+    width: 16.6rem;
+    height: 100%;
+    //margin: 0 0.9rem;
+    //transform: rotateY(30deg);
+    .rank-title{
+      background-image: url($imgsPath + 'rank-title-bg.png');
+      @extend %bg-contain;
+      height: 1.55rem;
+      h1{
+        padding-left: 1.4rem;
+        padding-top: 0.1rem;
+      }
+    }
+  }
+}

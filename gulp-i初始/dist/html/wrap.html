@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>div+css实现frameset效果</title>
+    <script src="./lib/jquery-3.1.1.min.js"></script>
+
+<style type="text/css">
+
+    html,body,div{
+        margin: 0;
+        padding: 0;
+    }
+    #box1,#box2{
+        width: 900px;
+        height:500px;
+        border:1px dashed #00ff90;
+        background-image: url("images/img-back.jpg");
+        background-size:100% 100% ;
+    }
+    .small{
+        width: 25%;
+        height:50%;
+    }
+    #box1 a,#bpx2 a{
+        float: left;
+        opacity:1;
+        -khtml-user-drag: element;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+        /* CSS3 transition rules */
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    a iframe{
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .large{
+        width: 66.66%;
+        height: 100%;
+    }
+    .one_two{
+        width: 66.66%;
+        height:50%;
+    }
+    .two_one{
+
+    }
+</style>
+</head>
+<body>
+    <div id="box1" droppable="true">
+        <a id="1" class="small" droggable="true">
+            <iframe src="data-dis.html" frameborder="0"></iframe>
+        </a>
+        <a id="2"  class="small" droggable="true">
+            <iframe src="doc-msg.html" frameborder="0"></iframe>
+        </a>
+        <a id='3' class="small" droggable="true">
+            <iframe src="rank.html" frameborder="0"></iframe>
+        </a>
+        <a id="4" class="small" droggable="true">
+            <iframe src=" hos-intro.html" frameborder="0"></iframe>
+        </a>
+        <a id="5" class="small" droggable="true">
+            <iframe src="star.html" frameborder="0"></iframe>
+        </a>
+        <a id="6" class="small" droggable="true">
+            <iframe src="user-num.html" frameborder="0"></iframe>
+        </a>
+        <a id="7" class="small" droggable="true">
+            <iframe src="data-dis.html" frameborder="0"></iframe>
+        </a>
+        <a id="8" class="small" droggable="true">
+            <iframe src="data-dis.html" frameborder="0"></iframe>
+        </a>
+    </div>
+    <div id="box2" droppable="true"></div>
+<button id="scaleMax">点击实现放大功能</button>
+<script>
+    var addEvent = (function () {
+        if (document.addEventListener) {
+            return function (el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.addEventListener(type, fn, false);
+                } else if (el && el.length) {
+                    for (var i = 0; i < el.length; i++) {
+                        addEvent(el[i], type, fn);
+                    }
+                }
+            };
+        } else {
+            return function (el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.attachEvent('on' + type, function () { return fn.call(el, window.event); });
+                } else if (el && el.length) {
+                    for (var i = 0; i < el.length; i++) {
+                        addEvent(el[i], type, fn);
+                    }
+                }
+            };
+        }
+    })();
+
+    // inner variables
+    var dragItems;
+    updateDataTransfer();
+    var dropAreas = document.querySelectorAll('[droppable=true]');
+    console.log(dropAreas.length);
+
+    function cancel(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        return false;
+    }
+
+    // update event handlers
+    function updateDataTransfer() {
+        dragItems = document.querySelectorAll('[draggable=true]');
+        for (var i = 0; i < dragItems.length; i++) {
+            addEvent(dragItems[i], 'dragstart', function (event) {
+                event.dataTransfer.setData('obj_id', this.id);
+                return false;
+            });
+        }
+    }
+
+    // dragover event handler
+    addEvent(dropAreas, 'dragover', function (event) {
+        if (event.preventDefault) event.preventDefault();
+        return false;
+    });
+
+    // dragleave event handler
+    addEvent(dropAreas, 'dragleave', function (event) {
+        if (event.preventDefault) event.preventDefault();
+        return false;
+    });
+
+    // dragenter event handler
+    addEvent(dropAreas, 'dragenter', cancel);
+
+    // drop event handler
+    addEvent(dropAreas, 'drop', function (event) {
+        if (event.preventDefault) event.preventDefault();
+
+        var iObj = event.dataTransfer.getData('obj_id');
+        var oldObj = document.getElementById(iObj);
+
+        var oldSrc = oldObj.childNodes[0].src;
+        var cls = oldObj.className;
+
+        console.log("id="+iObj+"//className="+cls);//拖动元素的id名
+        oldObj.className += 'hidden';
+        var oldThis = this;
+        setTimeout(function() {
+            oldObj.parentNode.removeChild(oldObj); // remove object from DOM
+
+            // add similar object in another place
+            oldThis.innerHTML += '<a id="'+iObj+'" class="'+cls+'" draggable="true"><img src="'+oldSrc+'" /></a>';
+
+            // and update event handlers
+            updateDataTransfer();
+
+            // little customization
+            //oldThis.style.borderColor = "#ccc";
+        }, 500);
+
+        return false;
+    });
+</script>
+</body>
+</html>

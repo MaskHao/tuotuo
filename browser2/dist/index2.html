@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- 苹果工具栏和菜单栏是否禁用 -->
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <title>养生知识</title>
+    <link rel="stylesheet" href="dist/css/weixin_list.css">
+</head>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    console.log(clientWidth);
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<body>
+
+<div class="cardlist">
+    <ul>
+        <li>
+            <a href="">
+                <div class="titleImg">
+                    <img  src="image/wumai.jpg" alt="雾霾">
+                </div>
+
+                <p class="title">雾霾天吃什么 始终清肺食物推荐</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="word">高血压病人这样饮食才合理!</span>
+                <div class="bdImg">
+                    <img  src="image/205226889721682736.jpg" alt="饮食">
+                </div>
+
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

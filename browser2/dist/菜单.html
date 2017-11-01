@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单生成器</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="table">
+    <table>
+        <thead>
+        <th>显示顺序</th>
+        <th>菜单名称</th>
+        <th>触发动作</th>
+        <th>相应动作</th>
+        <th>操作</th>
+        </thead>
+        <tr class="first">
+            <td><span>1</span></td>
+            <td>
+                <input type="text" placeholder="主菜单名称">
+                <input class="add" type="button" title="添加子菜单" value="+">
+            </td>
+            <td>
+                <select name="" class="selects">
+                    <option value="0">请选择</option>
+                    <option value="1">发送消息</option>
+                    <option value="2">跳转图文信息</option>
+                    <option value="3">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" class="selects_1"></textarea>
+                <input class="wp selects_2" type="button" value="点击图文信息">
+                <input class="link selects_3" type="text" placeholder="请输入链接地址">
+            </td>
+            <td>
+                <a class="del" href="#">删除</a>
+            </td>
+        </tr>
+        <tr class="first ft_1">
+            <td></td>
+            <td><input type="text" placeholder="子菜单名称"></td>
+            <td><select name="" class="selects">
+                    <option value="0">请选择</option>
+                    <option value="1">发送消息</option>
+                    <option value="2">跳转图文信息</option>
+                    <option value="3">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" class="selects_1"></textarea>
+                <input class="wp selects_2" type="button" value="点击图文信息">
+                <input class="link selects_3" type="text" placeholder="请输入链接地址">
+            </td>
+            <td><a class="del" href="#">删除</a></td>
+        </tr>
+        <tr class="first ft_2">
+            <td></td>
+            <td><input type="text" placeholder="子菜单名称"></td>
+            <td>
+                <select name="">
+                    <option value="0">请选择</option>
+                    <option value="">发送消息</option>
+                    <option value="">跳转图文信息</option>
+                    <option value="">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" ></textarea>
+                <input class="wp" type="button" value="点击图文信息">
+                <input class="link" type="text" placeholder="请输入链接地址">
+            </td>
+            <td>
+                <a class="del" href="#">删除</a>
+            </td>
+        </tr>
+        <tr class="first ft_3">
+            <td></td>
+            <td><input type="text" placeholder="子菜单名称"></td>
+            <td>
+                <select name="">
+                    <option value="0">请选择</option>
+                    <option value="">发送消息</option>
+                    <option value="">跳转图文信息</option>
+                    <option value="">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" ></textarea>
+                <input class="wp" type="button" value="点击图文信息">
+                <input class="link" type="text" placeholder="请输入链接地址">
+            </td>
+            <td>
+                <a class="del" href="#">删除</a>
+            </td>
+        </tr>
+        <tr class="first ft_4">
+            <td></td>
+            <td><input type="text" placeholder="子菜单名称"></td>
+            <td>
+                <select name="">
+                    <option value="0">请选择</option>
+                    <option value="">发送消息</option>
+                    <option value="">跳转图文信息</option>
+                    <option value="">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" ></textarea>
+                <input class="wp" type="button" value="点击图文信息">
+                <input class="link" type="text" placeholder="请输入链接地址">
+            </td>
+            <td>
+                <a class="del" href="#">删除</a>
+            </td>
+        </tr>
+        <tr class="first ft_5">
+            <td></td>
+            <td><input type="text" placeholder="子菜单名称"></td>
+            <td>
+                <select name="">
+                    <option value="0">请选择</option>
+                    <option value="">发送消息</option>
+                    <option value="">跳转图文信息</option>
+                    <option value="">跳转链接</option>
+                </select>
+            </td>
+            <td class="fn">
+                <textarea name="" ></textarea>
+                <input class="wp" type="button" value="点击图文信息">
+                <input class="link" type="text" placeholder="请输入链接地址">
+            </td>
+            <td>
+                <a class="del" href="#">删除</a>
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+    <div class="btn">
+        <input class=" primary" type="button" value="保存">
+        <input class=" primary" type="button" value="生成自定义菜单">
+        <input  type="reset" value="重置">
+    </div>
+</div>
+<script src="dist/js/index.js"></script>
+</body>
+</html>

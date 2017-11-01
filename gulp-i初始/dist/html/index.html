@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电视墙</title>
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        console.log( "分辨率"+ window.screen.height + '//' + window.screen.width );
+        console.log(  "工作区"+ window.screen.availHeight + '//' +  window.screen.availWidth );
+    }
+</script>
+<div id="wrap">
+    <div id="select">
+        <span>行</span>
+        <select name="行数" id="colNum">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <span>列</span>
+        <select name="行数" id="rowNum">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <button id="btn">确定</button>
+    </div>
+
+    <div id="content" class=""  droppable="true">
+
+        <iframe  id="window1" src="data-dis.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window2" src="doc-msg.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window3" src="hos-intro.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window4" src="rank.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window5" src="star.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window6" src="user-num.html" frameborder="0" draggable="true"></iframe>
+        <iframe id="window7" src="index7.html" frameborder="0" draggable="true" ></iframe>
+        <iframe id="window8" src="index8.html" frameborder="0" draggable="true"></iframe>
+    </div>
+</div>
+
+</body>
+<script src="js/main.js"></script>
+<script>
+
+    var colNum = document.getElementById('colNum');
+    var rowNum = document.getElementById('rowNum');
+    var btn = document.getElementById('btn');
+    var rows,cols;
+    btn.onclick = function(){
+        var colIndex = colNum.selectedIndex;
+        var colnumber = colNum.options[colIndex].value;
+        var rowIndex = rowNum.selectedIndex;
+        var rownumber = rowNum.options[rowIndex].value;
+        changeFrameHeight(colnumber,rownumber) ;
+        return rows =rownumber, cols = colnumber;
+    }
+
+    function changeFrameHeight(rows,cols){
+        var ifr = document.getElementsByTagName("iframe");
+        var nowClientW = document.documentElement.clientWidth;
+        var nowClientH = document.documentElement.clientHeight;
+        var proportion = nowClientW/nowClientH;//屏幕的宽高比例
+        var ifrW =  Math.floor(nowClientW/cols);//每个iframe的宽度
+        var ifrH =  Math.floor(nowClientH/rows);
+        var i= 0,len  = ifr.length;
+        for (;i<len;i++){
+            ifr[i].style.width  = ifrW + 'px';
+            ifr[i].style.height  = ifrH + "px";
+            console.log( "second rows="+rows+"//cols="+cols+"WH="+nowClientH+"/WW="+nowClientW+"/W="+ifr[i].style.width+"/H="+ifr[i].style.height);
+        }
+    }
+
+    var WH = document.documentElement.clientHeight;//开始屏幕的可视区高度
+    var WW = document.documentElement.clientWidth;//开始屏幕的可视区宽度
+    window.onresize = function(){
+        changeFrameHeight(rows,cols) ;
+    }
+
+
+
+</script>
+</html>

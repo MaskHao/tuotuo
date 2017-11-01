@@ -1,0 +1,99 @@
+@import 'normalize', 'animate';
+$imgsPath: "../../images-new/";
+html,body{
+  height: 100%;
+}
+.clear-fix:after{content:".";display:block;height:0;clear:both;visibility:hidden;overflow: hidden;}
+html{
+  font-size: calc(100vw / 19.2);
+}
+body{
+  font-size: 10%;
+  overflow: hidden;
+}
+.doc-container{
+  height: 100%;
+  position: relative;
+  background-image: url($imgsPath + 'bgd.png');
+  background-size: cover;
+  font-family: '微软雅黑';
+  position: relative;
+  overflow: hidden;
+  .msg-wrap{
+    backface-visibility: hidden;
+    width: 17.2rem;
+    position: absolute;
+    margin: 1rem 0 1rem 1rem;
+    color: #fff;
+    font-weight: 400;
+    @extend .clear-fix;
+    .item{
+      height: 4.4rem;
+      padding: 0.1px;
+      border: 0 solid #fff;
+      background-image: url($imgsPath + 'item-bg.png');
+      background-size: contain;
+      margin-bottom: 0.5rem;
+      .wrap{
+        position: relative;
+        margin: 0.3rem;
+      }
+      .avatar{
+        float: left;
+        margin-right: 0.4rem;
+        img{
+          width: 3.89rem;
+          height: 3.89rem;
+        }
+      }
+      .msg{
+        .tit-wrap{
+          .name{
+            display: inline-block;
+            margin-right: 0.4rem;
+            font-size: 0.72rem;
+          }
+          .tit{
+            font-size: 0.48rem;
+          }
+        }
+        .content{
+          height: 1.5rem;
+          font-size: 0.48rem;
+          line-height: 0.75rem;
+          word-break: break-all;
+        }
+        .hos{
+          @extend .clear-fix;
+          height: 0.9rem;
+          line-height: 0.9rem;
+          margin-top: -0.05rem;
+          .hos-name{
+            opacity: 0.6;
+            display: inline-block;
+            img{
+              width: 0.4rem;
+              height: 0.38rem;
+            }
+            .name{
+              display: inline-block;
+              margin-left: 0.16rem;
+              font-size: 0.36rem;
+              vertical-align: super;
+            }
+          }
+          .others{
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: -0.15rem;
+            img{
+              height: 1rem;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

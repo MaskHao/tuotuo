@@ -1,0 +1,13 @@
+.img{background:url(../images/img.png)  no-repeat;}
+.num-un{height:54px;width:335px;background-position:0 0;}
+.num-underline{height:11px;width:659px;background-position:0 -54px;}
+
+
+.img{background:url(../images/img.png)  no-repeat;}
+.矩形-2{height:32px;width:354px;background-position:0 0;}
+.图层-13{height:11px;width:659px;background-position:0 -32px;}
+
+
+.img{background:url(../images/img.png)  no-repeat;}
+.矩形-2{height:32px;width:354px;background-position:0 0;}
+.图层-13{height:11px;width:672px;background-position:0 -32px;}

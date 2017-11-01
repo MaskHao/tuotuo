@@ -1,0 +1,54 @@
+/*
+将被引入的sass文件
+*/
+//body{
+//  background-color: #eee;
+//}
+/*@content解决@media等带来的问题，可以使@mixin接受一整块样式，接受的样式从@content开始*/
+@mixin screen($res,$req){
+  @media only screen and (max-width: $res) and (min-width: $req){
+    @content;
+  }
+}
+@include screen(480px,200px){
+  body{
+    background-color:  red;}
+ }
+/*继承，选择器继承可以让选择器继承另一个选择器的所有样式，并联合申明，使用关键词@extend,后面紧跟需要继承的选择器*/
+h1{
+  border:4px solid #ff6161;}
+.speaker{
+  @extend h1;
+  border-width: 2px;
+}
+
+/*占位符% 3.2.0 不调用则不会有任何多余的css文件，避免了以前在一些基础的文件中预定义了很多基础的样式，然后实际应用中不管是否使用了@extend去继承，都会解析出来所有的样式，占位符选择器以%标识定义，通过@extend调用*/
+%ir{
+  color:transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+%clearfix{
+//  @if $lte7 {
+//    *zoom: 1;
+//  }
+  &:before,
+  &:after{
+    content: '';
+    display: table;
+    font:0/0 a;
+  }
+  &:after{
+    clear: both;
+  }
+}
+#header{
+  h1{
+    @extend %ir;
+    width:300px;
+  }
+}
+.ir{
+  @extend %ir;
+}

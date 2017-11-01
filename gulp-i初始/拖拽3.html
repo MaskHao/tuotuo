@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3</title>
+</head>
+<body>
+<a href=###">拖动到红色区块打开链接</a>
+<div style="width: 100px; height: 100px; float: right; background: red"
+     id="droptarget"></div>
+<div id="output"></div>
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        preventDefault: function (event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
+        },
+
+    };
+
+    var droptarget = document.getElementById("droptarget");
+    var link = document.links[0];
+
+    function handleEvent(event) {
+        document.getElementById("output").innerHTML += event.type + "<br>";
+        switch (event.type) {
+            case "dragstart":
+            case "draggesture":
+                event.dataTransfer.dropEffect = "link";
+                break;
+            case "dropenter":
+            case "dragover":
+                EventUtil.preventDefault(event);
+                event.dataTransfer.effectAllowed = "all";
+                break;
+            case "drop":
+            case "dragdrop":
+                droptarget.innerHTML = event.dataTransfer.getData("url") || event.dataTransfer.getData("text/uri-list");
+        }
+
+    }
+
+    EventUtil.addHandler(droptarget, "dragenter", handleEvent);
+    EventUtil.addHandler(droptarget, "dragover", handleEvent);
+    EventUtil.addHandler(droptarget, "dragleave", handleEvent);
+    EventUtil.addHandler(droptarget, "drop", handleEvent);
+
+    EventUtil.addHandler(link, "dragstart", handleEvent);
+</script>
+</html>

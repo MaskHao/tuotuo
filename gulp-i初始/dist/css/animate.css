@@ -1,0 +1,133 @@
+@keyframes flash {
+  from {
+    opacity: .3; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: .3; } }
+
+.flash {
+  animation: flash 2s ease infinite; }
+
+@keyframes rotateLeft {
+  from {
+    transform: rotateZ(0deg); }
+  50% {
+    transform: rotateZ(-180deg); }
+  to {
+    transform: rotateZ(-360deg); } }
+
+.rotateLeft {
+  animation: rotateLeft 100s linear infinite; }
+
+.doc-circle-left {
+  animation: rotateLeft 8s linear infinite; }
+
+@keyframes rotateRight {
+  from {
+    transform: rotateZ(0deg); }
+  50% {
+    transform: rotateZ(180deg); }
+  to {
+    transform: rotateZ(360deg); } }
+
+.rotateRight {
+  animation: rotateRight 100s linear infinite; }
+
+.doc-circle-right {
+  animation: rotateRight 8s linear infinite; }
+
+@keyframes in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.in {
+  animation: in 2s linear; }
+
+@keyframes out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.out {
+  animation: out 2s linear; }
+
+@keyframes rollout {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+    opacity: 1; }
+  50% {
+    transform: rotate3d(0, 1, 0, 90deg);
+    opacity: 0; }
+  to {
+    transform: rotate3d(0, 1, 0, 180deg);
+    opacity: 0; } }
+
+.rollout {
+  animation: rollout 3s both ease; }
+
+@keyframes rollin {
+  from {
+    transform: rotate3d(0, 1, 0, 180deg);
+    opacity: 0; }
+  50% {
+    transform: rotate3d(0, 1, 0, 90deg);
+    opacity: 0; }
+  to {
+    transform: rotate3d(0, 1, 0, 0deg);
+    opacity: 1; } }
+
+.rollin {
+  animation: rollin 3s both linear; }
+
+@keyframes starflash {
+  from {
+    opacity: .3; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: .3; } }
+
+.starflash {
+  animation: starflash 2s 0.2s ease infinite; }
+
+@keyframes star2flash {
+  from {
+    opacity: .2; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: .3; } }
+
+.star2flash {
+  animation: star2flash 2.5s 0.3s ease infinite; }
+
+@keyframes star3flash {
+  from {
+    opacity: .2; }
+  50% {
+    opacity: 1; }
+  to {
+    opacity: .3; } }
+
+.star3flash {
+  animation: star3flash 3s 0.5s linear infinite; }
+
+@keyframes smallBig {
+  from {
+    transform: scale(0.9, 0.9) translate(0, 0); }
+  50% {
+    transform: scale(1.2, 1.2) translate(100px, 100px); }
+  to {
+    transform: scale(0.9, 0.9) translate(0, 0); } }
+
+@keyframes bigSmall {
+  from {
+    transform: scale(1.2, 1.2); }
+  50% {
+    transform: scale(0.9, 0.9); }
+  to {
+    transform: scale(1.2, 1.2); } }

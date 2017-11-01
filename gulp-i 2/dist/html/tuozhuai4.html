@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//     将某一元素设置为有效的放置目标
+    var EventUtil = {
+        addHandler : function (element, type, handler){
+            if(element.addEventListener){
+                element.addEventListener(type, handler, false);
+            }else if (element.attachEvent){
+                element.attachEvent("on" + type, handler);
+            }else {
+                element["on"＋type]
+            }
+
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+@import 'normalize';
+$imgsPath: "../../images-new/";
+html,body{
+  height: 100%;
+}
+.clear-fix:after{content:".";display:block;height:0;clear:both;visibility:hidden;overflow: hidden;}
+html{
+  font-size: 625%;
+  @media screen and (max-width: 1400px){
+    font-size: 444%;
+  }
+}
+body{
+  font-size: 0.1rem;
+}
+.msgs{
+  height: 100%;
+  overflow: hidden;
+  background-image: url($imgsPath + 'bgd.png');
+  .msg-wrap{
+    overflow: hidden;
+    height: 4.4rem;
+    margin: 0.5rem 1rem;
+    background-image: url($imgsPath + 'item-bg.png');
+    .msg-main{
+      margin: 0.4rem;
+      .msg-avatar,.content{
+        display: inline-block;
+      }
+      .content{
+        margin-left: 0.44rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@import "normalize","animate";
+
+
+$imgsPath:'../../images/';
+
+.tx-right{
+  text-align: right;
+}
+html,body{
+  height: 100%;
+}
+html{
+  font-size: 625%;
+}
+body{
+  font-family: "微软雅黑";
+  font-size: 10%;
+  overflow: hidden;
+}
+.intro-container{
+  position: relative;
+  height: 100%;
+  padding: 1%;
+  //background-image: linear-gradient(to right,#0d1829,#1b4a6a,#394957);
+  background-image: url($imgsPath + 'intro-container-bg.png');
+  background-size: cover;
+  .hos-content-wrap{
+    position: relative;
+    width: 5.65rem;
+    height: 6.88rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+    background-image: url($imgsPath + 'hos-intro-bg.png');
+    background-size: contain;
+    padding: 0.6rem;
+    &>p{
+      color: #fff;
+      font: 0.24rem/0.48rem "微软雅黑";
+    }
+  }
+  .doc-intro-container{
+    position: absolute;
+    left: 0.8rem;
+    top: 1.95rem;
+    width: 6.47rem;
+    height: 3.4rem;
+    .doc-intro{
+      position: absolute;
+      width: 4.37rem;
+      height: 2rem;
+      left: 0;
+      top: 0;
+      animation: smallBig 8s linear infinite;
+      .doc{
+        position: absolute;
+        left: 0.15rem;
+        top: 0;
+        width: 2.45rem;
+        font: 0.14rem/0.25rem "微软雅黑";
+        text-align: left;
+        color: #9fd3ff;
+        .name-wrap{
+          .name{
+            display: inline-block;
+            font: 0.24rem/0.39rem "微软雅黑";
+            color: #fff;
+            margin-left: 0.1rem;
+          }
+        }
+        .doc-msg{
+          width: 2.26rem;
+        }
+      }
+      .circle{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        .out-circle{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-image: url($imgsPath + 'out-circle-bg.png');
+          background-repeat: no-repeat;
+        }
+        .in-circle{
+          position: absolute;
+          width: 1.4rem;
+          height: 1.4rem;
+          left: 50%;
+          top: 50%;
+          margin-left: -0.73rem;
+          margin-top: -0.7rem;
+          background-image: url($imgsPath + 'in-circle-bg.png');
+          background-repeat: no-repeat;
+        }
+      }
+      .doc-underline {
+        background-image: url($imgsPath + 'doc-underline.png');
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        height: 0.2rem;
+        position: absolute;
+        top: 20%;
+        left: 30%;
+      }
+    }
+  }
+  .small-star{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff;
+  }
+  .mid-star{
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff;
+  }
+  .big-star{
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff;
+  }
+}
