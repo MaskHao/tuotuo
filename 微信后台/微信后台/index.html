@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+    <title>index</title>
+    <link rel="stylesheet" href="dist/css/wx_menu.css">
+    <link rel="stylesheet" href="js/lib/dragula/dragula.min.css">
+    <script src="js/lib/dragula/dragula.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/lib/sortable.min.js"></script>
+    <script src="js/lib/mustache.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/gridify-min.js"></script>
+    <script src="js/menu/alert.js"></script>
+    <script src="js/menu/menuContent.js"></script>
+    <script src="js/menu/cardList.js"></script>
+    <script src="js/menu/preview.js"></script>
+    <script src="js/menu/index.js"></script>
+</head>
+<body>
+<div id="wx_menu">
+    <div class="mobile_preview">
+        <div class="m_menu">
+            <div class="m-hd">聚悦健康</div>
+            <div class="m-bd">
+                <ul class="pre_menu_list divMenu" id="ulDragItem">
+                </ul>
+            </div>
+        </div>
+        <div class="m_sort">
+            <a class="btn btn_default btnMenuOrder">菜单排序</a>
+        </div>
+    </div>
+    <div class="editor_inner">
+        <div class="protable_editor divMenuContent">
+        </div>
+        <div class="editor_arrow_wrap">
+            <i class="editor_arrow editor_arrow_out"></i>
+            <i class="editor_arrow editor_arrow_in"></i>
+        </div>
+    </div>
+    <div class="tool_bar">
+        <a class="dn2 btn btn_success btnPublish">发布</a>
+        <a class="dn btn btn_default btnPrevice">预览</a>
+    </div>
+    <div class="divCardList"></div>
+</div>
+</body>
+</html>

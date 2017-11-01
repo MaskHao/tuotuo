@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>多列属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        h1{
+            width: 100%;
+            height: 50px;
+            margin: 0;
+            padding:0;
+            text-align: center;
+            line-height: 50px;
+            border: 2px solid;
+            border-bottom-color: aqua ;
+        }
+        .picC{
+            width: 90%;
+            margin: 50px auto;
+            -webkit-column-count: 5;
+            -webkit-column-gap: 20px;
+            list-style-type: none;
+        }
+        .picC li{
+            margin: 10px 10px;
+            transition:  width 2s ease;
+        }    </style>
+</head>
+<body>
+<h1>瀑布流效果</h1>
+<ol class="picC">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ol>
+<script>
+    window.onload = function () {
+        var lis =  document.getElementsByTagName('li');
+//        alert(lis.length);
+        console.log(lis[3]);
+        lis[3].style.width = '0';
+        lis[3]
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信自定义菜单</title>
+    <link rel="stylesheet" href="dist/css/wx_menu.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="wx_menu">
+    <div class="mobile_preview">
+        <div class="m_menu">
+            <div class="m-hd">聚悦健康</div>
+
+            <div class="m-bd">
+                <ul class="pre_menu_list">
+                    <li class="pre_menu_item sizelof3">
+                        <a href="javascript:void(0)" class="pre_menu_link active" draggable="false">
+                            <!-- 圆点按钮 -->
+                            <i class="icon_menu_dot " ></i>
+                            <i class="icon20_common sort_gray" ></i>
+                            <span class="">菜单名称</span>
+                        </a>
+
+                        <!--一级主菜单下的子菜单-->
+                        <div class="sub_pre_menu_box ">
+                            <ul class="sub_pre_menu_list">
+
+                                <!--子菜单“子菜单名称”-->
+                                <li class="selected  current">
+                                    <a href="javascript:void(0);" class="" draggable="false">
+                                        <span class="sub_pre_menu_inner ">
+                                            <i class="icon20_common sort_gray"></i>
+                                            <span class="js_l2Title">子菜单名称</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <!--子菜单“子菜单名称”-->
+                                <li class="selected  current">
+                                    <a href="javascript:void(0);" class="" draggable="false">
+                                        <span class="sub_pre_menu_inner ">
+                                            <i class="icon20_common sort_gray"></i>
+                                            <span class="js_l2Title">子菜单名称</span>
+                                        </span>
+                                    </a>
+                                </li>
+
+
+                                <!--子菜单“+”-->
+                                <li class="">
+                                    <a href="javascript:void(0)" class="" title="最多添加5个子菜单" draggable="false">
+                                        <span class="sub_pre_menu_inner ">
+                                            <i class="icon14_menu_add"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <!--子菜单“+”-->
+                            </ul>
+                            <i class="arrow arrow_out"></i>
+                            <i class="arrow arrow_in"></i>
+                        </div>
+                        <!--一级主菜单下的子菜单-->
+                    </li>
+
+                    <li class="pre_menu_item sizelof3">
+                        <a href="javascript:void(0)" class="pre_menu_link " draggable="false">
+                            <i class="icon_menu_dot " style="display: none;"></i>
+                            <i class="icon20_common sort_gray" ></i>
+                            <span class="">菜单名称</span>
+                        </a>
+                        <div class="sub_pre_menu_box" style="display: none;">
+                            <ul class="sub_pre_menu_list">
+                                <li class="js_addMenuBox">
+                                    <a href="javascript:void(0);" class="" title="最多添加5个子菜单" draggable="false">
+                                        <span class="sub_pre_menu_inner">
+                                            <i class="icon14_menu_add"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <i class="arrow arrow_out"></i>
+                            <i class="arrow arrow_in"></i>
+                        </div>
+                    </li>
+
+
+                    <li class="pre_menu_item sizelof3">
+                        <a href="javascript:void(0)" class="pre_menu_link" draggable="false">
+                            <i class="icon14_menu_add" ></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="m_sort">
+            <a id="orderBt" href="javascript:void(0);" class="btn btn_default">菜单排序</a>
+            <a id="orderDis" href="javascript:void(0);" class="dn btn btn_default" style="display: none;">完成</a>
+        </div>
+    </div>
+    <div class="editor_inner">
+        <div class="menu_tips" style="display: none;">点击左侧菜单进行编辑操作</div>
+
+        <div class="protable_editor">
+
+            <div class="pe_hd">
+                <p class="child-tip" style="display: none;"><span>子菜单名称</span><a class="delMenu" href="JavaScript:void(0);">删除子菜单</a></p>
+                <p class="main-tip" ><span >菜单名称</span><a class="delMenu" href="JavaScript:void(0);">删除菜单</a></p>
+            </div>
+
+            <p class="hint">已添加子菜单，仅可以设置菜单名称</p>
+            <div class="menu_name">
+                <span class="mn_name">菜单名称</span>
+                <div class="mn_r">
+                    <input class="getName" type="text" placeholder="菜单名称">
+                    <!--错误时候提示-->
+                    <p class="error">请输入菜单名称</p>
+
+                    <p>字数不超过4个汉字或8个字母</p>
+                </div>
+            </div>
+
+            <div class="menu_conent">
+                <span class="mc">菜单内容</span>
+                <label>
+                    <input type="radio" name="select">发送消息
+                </label>
+                <label>
+                    <input type="radio" name="select">跳转网页
+                </label>
+                <div class="mc_cont" >
+                    <a class="mc_cont_letter" style="display: none;">
+                        <i class="icon36_common"></i>
+                        <p>从素材库中选择</p>
+                    </a>
+                    <div class="mc_cont_url" >
+                        <p class="url_word">订阅者点击该菜单会跳转到以下链接</p>
+                        <span class="url_address">页面地址</span>
+                        <input type="text"class="url_link">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--箭头-->
+        <div class="editor_arrow_wrap">
+            <i class="editor_arrow editor_arrow_out"></i>
+            <i class="editor_arrow editor_arrow_in"></i>
+        </div>
+    </div>
+
+
+    <!-- 发布 -->
+    <div class="tool_bar">
+        <a href="javascript:void(0);" class="dn2 btn btn_success">保存并发布</a>
+        <a href="javascript:void(0);" class="dn btn btn_default  ">预览</a>
+    </div>
+
+    <!--删除时候的确认弹框样式-->
+    <div class="del_alert"  style="display: none;">
+        <div class="da_cont">
+            <p class="da_hd">
+                温馨提示
+                <a href="javascript:void(0);" class="pop_closed"></a>
+            </p>
+            <div class="da_bd">
+                <div class="da_bd_cont">
+                    <i class="icon_msg warn"></i>
+                    <p>删除确认</p>
+                    <span>删除后 “菜单名称” 下设置的内容将被删除</span>
+                </div>
+
+            </div>
+            <div class="da_fot">
+                <a href="javascript:void(0);" class="dn2 btn  btn_success">确定</a>
+                <a href="javascript:void(0);" class="dn btn btn_default  ">取消</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 预览效果 -->
+    <div class="preview" style="display:none;" >
+        <div class="pw_cont">
+            <div class="pw_hd">
+                <strong class="nickname">聚悦健康</strong>
+            </div>
+            <div class="pw_bd">
+
+            </div>
+            <div class="pw_ft">
+                <ul class="pw_menu_list">
+                    <li class="pre_menu_item sizelof3">菜单名称</li>
+                    <li class="pre_menu_item sizelof3">菜单名称</li>
+                    <li class="pre_menu_item sizelof3">菜单名称</li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" class="btn btn_default pw_closed">退出预览</a>
+        </div>
+
+    </div>
+    <!--素材库选择-->
+    <div class="material_library">
+        <div class="ml_cont">
+            <div class="ml_hd">
+               <span>选择素材</span>
+                <a href="javascript:void(0)" class="pop_closed"></a>
+            </div>
+            <div class="ml_bd">
+                <div class="ml_bd_fn">
+                    <div class="fn_serch">
+                        <input type="text" placeholder="标题/作者/摘要" class="msg_serch">
+                        <a href="javascript:;" class="serch">
+                            <i class="icon16_common serchImg"></i>
+                        </a>
+                    </div>
+                    <a href="javascript:;" class="fn_create btn btn_success">
+                        <i class="icon14_common add_white"></i>
+                        新建图文消息</a>
+                </div>
+
+                <!-- 素材列表 -->
+                <div class="ml_bd_cont">
+                    <ul class="card">
+                        <li style="background-color:#eee;height: 200px;">
+                            <div>aaaaaaaaaaaaaa</div>
+                            <div class="mask">
+                                <i class="icon_card_selected"></i>
+                            </div>
+                        </li>
+                        <li style="background-color:#e15f63;height: 200px;">
+                            <div>sssssssssssss</div>
+                            <div class="mask" style="display: none;">
+                                <i class="icon_card_selected"></i>
+                            </div>
+                        </li>
+                        <li style="background-color:#e15f63;height: 200px;">
+                            <div>sssssssssssss</div>
+                            <div class="mask" style="display: none;">
+                                <i class="icon_card_selected"></i>
+                            </div>
+                        </li>
+                        <li style="background-color:#e15f63;height: 200px;">
+                            <div>sssssssssssss</div>
+                            <div class="mask" style="display: none;">
+                                <i class="icon_card_selected"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ml_ft">
+                <a href="javascript:;" class="btn btn_success">确定</a>
+                <a href="javascript:;" class="btn btn_default">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src=""></script>
+</body>
+</html>

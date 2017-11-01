@@ -1,0 +1,1147 @@
+@charset "UTF-8";
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+template,
+[hidden] {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+optgroup {
+  font-weight: bold; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 16px;
+  background-color: #F5F5F5; }
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5; }
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #999; }
+
+html, body {
+  height: 100%;
+  line-height: 1.6;
+  font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  color: #222;
+  font-size: 14px; }
+
+body {
+  min-height: 800px; }
+
+ul, li {
+  list-style: none; }
+
+ul, li, p {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+.clear:after, .pre_menu_list:after, #wx_menu:after, .editor_inner .protable_editor .pe_hd:after, .editor_inner .protable_editor .pe_hd p:after, .editor_inner .protable_editor .menu_name:after, .del_alert .da_cont .da_hd:after, .del_alert .da_cont .da_bd .da_bd_cont:after, .material_library .ml_cont .ml_hd:after, .material_library .ml_cont .ml_bd .ml_bd_fn:after, .material_library .ml_cont .ml_bd .ml_bd_fn .fn_serch:after, .card_list .cl_cont .cl_ft:after, .publish_alert .pa_cont .pa_hd:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '\20';
+  clear: both;
+  height: 0; }
+
+.clear, .pre_menu_list, #wx_menu, .editor_inner .protable_editor .pe_hd, .editor_inner .protable_editor .pe_hd p, .editor_inner .protable_editor .menu_name, .del_alert .da_cont .da_hd, .del_alert .da_cont .da_bd .da_bd_cont, .material_library .ml_cont .ml_hd, .material_library .ml_cont .ml_bd .ml_bd_fn, .material_library .ml_cont .ml_bd .ml_bd_fn .fn_serch, .card_list .cl_cont .cl_ft, .publish_alert .pa_cont .pa_hd {
+  *zoom: 1; }
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  overflow: visible;
+  padding: 0 22px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid; }
+
+/* 默认按钮 */
+.btn_default {
+  background-color: #fff;
+  border-color: #e7e7eb;
+  color: #222; }
+
+/* 提示按钮样式 */
+.btn_success {
+  background-color: #44b549;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#44b549), to(#44b549));
+  background-image: -webkit-linear-gradient(top, #44b549 0, #44b549 100%);
+  background-image: linear-gradient(to bottom, #44b549 0, #44b549 100%);
+  border-color: #44b549;
+  color: #ffffff; }
+
+/* 发布按钮*/
+.btn_publish {
+  background-image: -webkit-linear-gradient(top, #f00 0, #f00 100%);
+  background-image: linear-gradient(to bottom, #f00 0, #f00 100%);
+  border-color: #f00;
+  color: #ffffff; }
+
+/* 按钮hover样式 */
+.btn_success:hover {
+  background: #2f9833; }
+
+.btn_default:hover {
+  background: #e7e7eb; }
+
+.btn_publish:hover {
+  background: #951414; }
+
+a {
+  cursor: pointer; }
+
+/* 删除按钮样式 */
+.pop_closed {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 15px;
+  background: url(../images/base.png) 0 -2395px no-repeat; }
+
+/* 主菜单 菜单分成几块，三块则每个为sizelof3 */
+.sizelot1 {
+  width: 100%; }
+
+.sizelof2 {
+  width: 50%; }
+
+.sizelof3 {
+  width: 33.33%; }
+
+/* 每个主菜单的样式 */
+.pre_menu_item {
+  position: relative;
+  float: left;
+  line-height: 38px;
+  text-align: center; }
+
+/* 主菜总体样式 */
+.pre_menu_list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e7e7eb;
+  background: url(../images/bg_mobile_foot.png) no-repeat 0 0;
+  background-position: 0 0;
+  padding-left: 43px;
+  /* 为了让前面的键盘按钮显示出来 */
+  /* 内容单个 个体的样式 */
+  /* 按钮中的“ 。 ” */
+  /* +号按钮样式 */ }
+  .pre_menu_list .pre_menu_item {
+    box-sizing: border-box;
+    line-height: 50px;
+    position: relative;
+    float: left;
+    text-align: center;
+    /* 所有的按钮都为a标签，设定样式 */
+    /* 主菜单单个的样式（默认） */
+    /* 主菜单单个点击选中的样式（高亮） */ }
+    .pre_menu_list .pre_menu_item a {
+      display: block;
+      width: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      color: #616161;
+      text-decoration: none; }
+    .pre_menu_list .pre_menu_item .pre_menu_link {
+      height: 50px;
+      background-color: #fff;
+      border-left: 1px solid #e7e7eb; }
+    .pre_menu_list .pre_menu_item .active {
+      line-height: 48px;
+      box-sizing: border-box;
+      border: 1px solid #44b549;
+      color: #44b549; }
+    .pre_menu_list .pre_menu_item .icon20_common.sort_gray {
+      background: url(../images/base.png) 0 -4729px no-repeat; }
+  .pre_menu_list .sort_gray {
+    margin-top: -4px; }
+  .pre_menu_list .icon_menu_dot {
+    background: url(../images/bg_icon.png) 0 -36px no-repeat;
+    width: 7px;
+    height: 7px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 2px;
+    margin-top: -2px; }
+  .pre_menu_list .icon14_menu_add {
+    background: url(../images/bg_icon.png) 0 0 no-repeat;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -2px; }
+
+/* 子菜单  1 */
+.sub_pre_menu_box {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 100%;
+  border: 1px solid #d0d0d0;
+  background-color: #fafafa;
+  border-top-width: 0;
+  box-sizing: border-box;
+  /* 子菜单的底标箭头 */ }
+  .sub_pre_menu_box .active {
+    line-height: 42px; }
+  .sub_pre_menu_box .sub_pre_menu_list li {
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid transparent;
+    margin: 0 -1px -1px;
+    box-sizing: border-box; }
+    .sub_pre_menu_box .sub_pre_menu_list li .active {
+      line-height: 40px; }
+    .sub_pre_menu_box .sub_pre_menu_list li .sub_pre_menu_inner {
+      display: block;
+      border-top: 1px solid #e7e7eb;
+      width: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      cursor: pointer; }
+  .sub_pre_menu_box .sub_pre_menu_list li:first-child {
+    border-top: 1px solid #d0d0d0; }
+  .sub_pre_menu_box .arrow {
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: dashed;
+    border-color: transparent;
+    border-bottom-width: 0;
+    border-top-style: solid; }
+  .sub_pre_menu_box .arrow_out {
+    bottom: -6px;
+    border-top-color: #d0d0d0; }
+  .sub_pre_menu_box .arrow_in {
+    bottom: -5px;
+    border-top-color: #fafafa; }
+
+#wx_menu {
+  width: 930px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 4% 0; }
+
+.mobile_preview {
+  position: relative;
+  float: left;
+  margin-right: 12px; }
+
+.m_menu {
+  position: relative;
+  width: 317px;
+  height: 580px;
+  background: url(../images/bg_mobile_head.png) no-repeat 0 0;
+  background-position: 0 0;
+  border: 1px solid #e7e7eb; }
+  .m_menu .m-hd {
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 15px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    margin: 0 30px; }
+
+/* 手机菜单排序按钮样式 */
+.m_sort {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -72px;
+  text-align: center; }
+  .m_sort .btn {
+    display: inline-block; }
+
+.editor_inner {
+  float: left;
+  width: 590px;
+  height: 580px;
+  position: relative;
+  /* 左箭头 */ }
+  .editor_inner .protable_editor {
+    margin-left: 12px;
+    padding: 0 20px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f4f5f9;
+    /* 主菜单存在时候提示 */
+    /* 菜单名称 */
+    /* 菜单内容 */ }
+    .editor_inner .protable_editor .pe_hd {
+      padding: 9px 0;
+      font-weight: 400;
+      border-bottom: 1px solid #e7e7eb; }
+      .editor_inner .protable_editor .pe_hd a {
+        float: right;
+        color: #459ae9; }
+      .editor_inner .protable_editor .pe_hd a:hover {
+        text-decoration: underline; }
+    .editor_inner .protable_editor .hint {
+      color: #8d8d8d;
+      padding-top: 10px; }
+    .editor_inner .protable_editor .menu_name {
+      margin-top: 10px;
+      width: 100%;
+      overflow: hidden; }
+      .editor_inner .protable_editor .menu_name .mn_name {
+        display: inline-block;
+        float: left;
+        margin-right: 30px; }
+      .editor_inner .protable_editor .menu_name .mn_r {
+        float: left; }
+        .editor_inner .protable_editor .menu_name .mn_r p {
+          margin: 4px 0;
+          color: #999; }
+        .editor_inner .protable_editor .menu_name .mn_r .getName {
+          height: 22px;
+          width: 228px;
+          border: 0;
+          outline: 0; }
+        .editor_inner .protable_editor .menu_name .mn_r .error {
+          color: #e15f63; }
+    .editor_inner .protable_editor .menu_conent {
+      margin: 50px 0 10px;
+      line-height: 30px; }
+      .editor_inner .protable_editor .menu_conent .mc, .editor_inner .protable_editor .menu_conent label {
+        margin-right: 30px; }
+      .editor_inner .protable_editor .menu_conent label input {
+        margin-right: 5px; }
+      .editor_inner .protable_editor .menu_conent .mc_cont {
+        position: relative;
+        width: 100%;
+        height: 370px;
+        overflow: auto;
+        background-color: #fff;
+        margin-top: 10px;
+        border: 1px solid transparent; }
+        .editor_inner .protable_editor .menu_conent .mc_cont .card_list {
+          margin-left: 20px;
+          margin-top: 20px; }
+      .editor_inner .protable_editor .menu_conent .mc_cont_letter {
+        text-align: center;
+        border: 2px dotted #d9dadc;
+        color: #8d8d8d;
+        padding: 30px;
+        margin: 30px 60px;
+        cursor: pointer;
+        display: block; }
+        .editor_inner .protable_editor .menu_conent .mc_cont_letter .icon36_common {
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          background: url(../images/base.png) 0 -2498px no-repeat; }
+      .editor_inner .protable_editor .menu_conent .mc_cont_url {
+        padding: 15px;
+        text-align: left; }
+        .editor_inner .protable_editor .menu_conent .mc_cont_url .url_word {
+          margin-bottom: 15px;
+          color: #8d8d8d; }
+        .editor_inner .protable_editor .menu_conent .mc_cont_url .url_address {
+          margin-right: 20px; }
+        .editor_inner .protable_editor .menu_conent .mc_cont_url .url_link {
+          width: 300px;
+          height: 30px; }
+  .editor_inner .editor_arrow_wrap {
+    position: absolute;
+    top: 545px;
+    left: 0; }
+    .editor_inner .editor_arrow_wrap .editor_arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-width: 12px;
+      border-style: dashed;
+      border-color: transparent;
+      border-left-width: 0;
+      border-right-color: #e7e7eb;
+      border-right-style: solid;
+      position: absolute; }
+    .editor_inner .editor_arrow_wrap .editor_arrow_out {
+      left: 0; }
+    .editor_inner .editor_arrow_wrap .editor_arrow_in {
+      left: 1px;
+      border-right-color: #f4f5f9; }
+
+/* 发布与预览等功能按钮 */
+.tool_bar {
+  float: left;
+  margin: 40px; }
+  .tool_bar .btn_success {
+    margin-right: 20px;
+    padding: 0 40px; }
+  .tool_bar .btn_default {
+    padding: 0 40px; }
+
+.del_alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999; }
+  .del_alert .da_cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 720px;
+    overflow: hidden;
+    background-color: #f4f5f9; }
+    .del_alert .da_cont .da_hd {
+      line-height: 50px;
+      color: #222;
+      font-size: 18px;
+      padding: 0  20px; }
+    .del_alert .da_cont .da_bd {
+      padding: 66px 45px 108px;
+      width: 630px;
+      height: 80px;
+      background-color: #fff; }
+      .del_alert .da_cont .da_bd .da_bd_cont {
+        width: 350px;
+        height: 46px;
+        margin: 0 auto; }
+        .del_alert .da_cont .da_bd .da_bd_cont span {
+          color: #8d8d8d; }
+      .del_alert .da_cont .da_bd .icon_msg {
+        width: 46px;
+        height: 46px;
+        float: left;
+        margin-right: 10px;
+        background: url(../images/base.png) 0 -1640px no-repeat; }
+    .del_alert .da_cont .da_fot {
+      height: 66px;
+      line-height: 66px;
+      text-align: center; }
+      .del_alert .da_cont .da_fot a {
+        margin-left: 10px;
+        padding: 0 40px; }
+
+/* 素材库 */
+.material_library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999; }
+  .material_library .ml_cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 960px;
+    height: 627px;
+    margin-left: -480px;
+    margin-top: -313.5px;
+    background-color: #f4f5f9; }
+    .material_library .ml_cont .ml_hd {
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 50px; }
+    .material_library .ml_cont .ml_bd {
+      background-color: #fff; }
+      .material_library .ml_cont .ml_bd .ml_bd_fn {
+        padding: 10px 20px;
+        border-bottom: 1px solid #e7e7eb; }
+        .material_library .ml_cont .ml_bd .ml_bd_fn .fn_serch {
+          float: left; }
+        .material_library .ml_cont .ml_bd .ml_bd_fn .msg_serch {
+          width: 300px;
+          height: 28px;
+          line-height: 28px;
+          padding: 1px 10px;
+          border: 1px solid #e7e7eb;
+          border-right: none;
+          outline: none;
+          float: left; }
+        .material_library .ml_cont .ml_bd .ml_bd_fn .serch {
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          border: 1px solid #e6e7eb; }
+        .material_library .ml_cont .ml_bd .ml_bd_fn .icon16_common {
+          display: inline-block;
+          background: url(../images/base.png) 0 -3641px no-repeat;
+          width: 16px;
+          height: 16px;
+          margin: 7px; }
+        .material_library .ml_cont .ml_bd .ml_bd_fn .btn {
+          float: right; }
+          .material_library .ml_cont .ml_bd .ml_bd_fn .btn .icon14_common {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            display: inline-block;
+            background: url(../images/base.png) 0 -3026px no-repeat;
+            margin-top: -2px;
+            margin-right: 5px; }
+      .material_library .ml_cont .ml_bd .ml_bd_cont {
+        width: 100%;
+        height: 453px; }
+        .material_library .ml_cont .ml_bd .ml_bd_cont .card {
+          margin: 0 auto;
+          width: 680px;
+          height: 450px;
+          overflow-y: auto; }
+          .material_library .ml_cont .ml_bd .ml_bd_cont .card .card_list:hover .mask {
+            display: block; }
+          .material_library .ml_cont .ml_bd .ml_bd_cont .card .mask {
+            position: absolute;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+            color: #ffffff;
+            text-align: center;
+            display: none; }
+            .material_library .ml_cont .ml_bd .ml_bd_cont .card .mask .icon_card_selected {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -23px -23px;
+              background: url(../images/base.png) 0 -5333px no-repeat;
+              width: 46px;
+              height: 46px;
+              vertical-align: middle;
+              display: inline-block; }
+    .material_library .ml_cont .ml_ft {
+      line-height: 65px;
+      background-color: #f4f5f9;
+      text-align: center; }
+      .material_library .ml_cont .ml_ft .btn {
+        padding: 0 40px;
+        margin-right: 5px; }
+
+/* 消息列表 */
+.card_list {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  padding: 10px;
+  background-color: #fff; }
+  .card_list .cl_cont {
+    display: block; }
+    .card_list .cl_cont .cl_hdPic {
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover; }
+    .card_list .cl_cont .cl_des {
+      color: #666; }
+    .card_list .cl_cont hr {
+      height: 1px;
+      border: none;
+      border-top: 1px solid #eeeeee; }
+    .card_list .cl_cont .cl_ft span {
+      float: right;
+      color: #666; }
+  .card_list .cl_cont2 .cl_top {
+    display: block;
+    border-top: 0;
+    height: 120px;
+    position: relative; }
+    .card_list .cl_cont2 .cl_top .cltPic {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover; }
+    .card_list .cl_cont2 .cl_top .cltWord {
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      line-height: 28px;
+      padding-left: 8px;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.6); }
+  .card_list .cl_cont2 .cl_ct {
+    margin-top: 5px;
+    border-top: 1px solid #eee; }
+  .card_list .cl_cont2 .tow {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 60px; }
+    .card_list .cl_cont2 .tow p {
+      display: inline-block;
+      vertical-align: middle;
+      width: 223px; }
+      .card_list .cl_cont2 .tow p span {
+        line-height: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        word-break: break-all;
+        overflow: hidden;
+        float: left;
+        max-height: 40px; }
+    .card_list .cl_cont2 .tow .pic {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover; }
+
+/* 预览页面 */
+.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999; }
+  .preview .pw_cont {
+    width: 327px;
+    margin: 30px auto;
+    background: url(../images/preview.png) no-repeat 0 0; }
+    .preview .pw_cont .pw_hd {
+      height: 150px;
+      text-align: center; }
+      .preview .pw_cont .pw_hd .nickname {
+        display: inline-block;
+        font-weight: 400;
+        padding-top: 120px;
+        width: 122px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        font-size: 14px;
+        color: #ffffff; }
+    .preview .pw_cont .pw_bd {
+      height: 393px;
+      text-align: center;
+      margin-left: 28px;
+      margin-right: 28px;
+      overflow-y: auto;
+      background-color: #f5f5f5; }
+      .preview .pw_cont .pw_bd .card_list {
+        width: 242px;
+        text-align: left;
+        position: relative;
+        border: 1px solid #e3e3e3;
+        margin-top: 5px; }
+        .preview .pw_cont .pw_bd .card_list .cl_top {
+          height: 100px; }
+        .preview .pw_cont .pw_bd .card_list .cl_ct .tow {
+          height: 50px;
+          padding-top: 5px; }
+        .preview .pw_cont .pw_bd .card_list .cl_ct p {
+          width: 165px; }
+    .preview .pw_cont .pw_ft {
+      position: relative;
+      height: 40px; }
+      .preview .pw_cont .pw_ft .pre_menu_list {
+        bottom: 2px;
+        margin-left: 28px;
+        margin-right: 30px;
+        height: 40px; }
+        .preview .pw_cont .pw_ft .pre_menu_list .pre_menu_item {
+          height: 40px;
+          box-sizing: border-box;
+          line-height: 40px; }
+          .preview .pw_cont .pw_ft .pre_menu_list .pre_menu_item .pre_menu_link {
+            height: 40px; }
+          .preview .pw_cont .pw_ft .pre_menu_list .pre_menu_item .active {
+            border: none;
+            border-left: 1px solid #e7e7eb;
+            line-height: 40px; }
+    .preview .pw_cont .btn {
+      margin: 110px 108px 20px; }
+
+.dad-noSelect, .dad-noSelect * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: -moz-grabbing !important; }
+
+.dad-container {
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+.dad-container::after {
+  content: '';
+  clear: both !important;
+  display: block; }
+
+.dad-active .dad-draggable-area {
+  cursor: -moz-grab; }
+
+.dads-children-clone {
+  opacity: 0.8;
+  z-index: 9999;
+  pointer-events: none; }
+
+.dads-children-placeholder {
+  overflow: hidden;
+  position: absolute !important;
+  box-sizing: border-box;
+  border: 4px solid #639BF6;
+  margin: 5px;
+  text-align: center;
+  color: #639BF6;
+  font-weight: bold; }
+
+.publish_alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; }
+  .publish_alert .pa_cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 150px;
+    border-radius: 8PX;
+    margin-left: -175px;
+    margin-top: -75px;
+    background-color: #44b549;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6); }
+    .publish_alert .pa_cont .pa_hd {
+      height: 50px;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 50px; }
+      .publish_alert .pa_cont .pa_hd .pa_closed {
+        display: inline-block;
+        font-size: 18px;
+        float: right;
+        color: #ffffff; }
+    .publish_alert .pa_cont .pa_bd {
+      text-align: center;
+      font-size: 20px;
+      color: #ffffff;
+      line-height: 45px; }
+  .publish_alert .pa_error {
+    background-color: #ff0000; }
+
+/* 菜单内容中素材的删除按钮 */
+.cancel {
+  position: absolute;
+  left: 320px; }
+
+.cancel:hover {
+  color: #f00;
+  text-decoration: underline; }
+
+/* loading效果 */

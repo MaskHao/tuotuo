@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>限制输入字节数</title>
+    <meta name="author" content="sohighthesky"/>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        #div1 {width:500px;margin:20px auto;}
+        #div1 ul {list-style-type:decimal;line-height:25px;}
+    </style>
+</head>
+<body>
+<div id="div1">
+    <ul>
+        <li>可输入16个字节：<input type="text" id="txt1" value="你好e"/></li>
+        <li>可输入6个字节：<input type="text" id="txt2" value="hello,"/></li>
+        <li>可输入7个字节：<input type="text" id="txt3" value="，he"/></li>
+        <li>可输入n个字节：<input type="text" id="txt4"/></li>
+    </ul>
+</div>
+    <div id="a">
+        <a href="javascript:;">1</a>
+        <a href="javascript:;">2</a>
+        <a href="javascript:;">3</a>
+        <div>
+            <a href="javascript:;">4</a>
+        </div>
+        <div>
+            <div>
+                <a href="javascript:;">5</a>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<script type="text/javascript">
+    /*!
+     *author:sohighthesky
+     *Date:2010-1-16
+     */
+    !function(){
+        var len=function(s){//获取字符串的字节长度
+                s=String(s);
+//alert((s.match(/[^\x00-\xff]/g) ||"").length);
+//alert(s.length);
+//字符长度eg:张三abc    长度为5
+                var length=s.length;
+//匹配到的全角字符长度 eg:张三 长度为2
+                var hanzi=(s.match(/[^\x00-\xff]/g) ||"").length;
+//字符个数
+                var num=length-hanzi;
+//算整个字节数(微信端一个汉字占用3个字节，一级菜单总字节数不超过16个)
+                var fstr=hanzi*3+num;
+                return fstr;
+            },
+            limitDo=function(limit){
+                var val=this.value;
+                if(len(val)>limit) {
+//val=val.substr(0,limit);
+                    while(len(val=val.substr(0,val.length-1))>limit);
+                    this.value=val;
+                }
+            },
+            $=function(id){return typeof(id)==='string'?document.getElementById(id):id;};
+
+
+        $("txt1").onkeyup=function(){limitDo.call(this,16)};
+        $("txt2").onkeyup=function(){limitDo.call(this,6)};
+        $("txt3").onkeyup=function(){limitDo.call(this,7)};
+    }();
+
+
+    $(function () {
+        $("#a a").on("click",function () {
+           console.log($("#a a").length);
+           $(this).css({"color":"red"});
+        });
+    })
+</script>
+</html>

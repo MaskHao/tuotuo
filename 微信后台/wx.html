@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wx</title>
+    <link rel="stylesheet" href="dist/css/wx_menu.css">
+    <script src="js/config.js"></script>
+    <script src="js/lib/mustache.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/gridify-min.js"></script>
+    <script src="js/menu/menuContent.js"></script>
+    <script src="js/menu/cardList.js"></script>
+    <script src="js/menu/preview.js"></script>
+    <script src="js/menu/index.js"></script>
+</head>
+<body>
+<div id="wx_menu">
+    <div class="mobile_preview">
+        <div class="m_menu">
+            <div class="m-hd">聚悦健康</div>
+            <div class="m-bd">
+                <ul class="pre_menu_list divMenu">
+                </ul>
+            </div>
+        </div>
+        <div class="m_sort">
+            <a id="orderBt" class="btn btn_default">菜单排序</a>
+            <a id="orderDis" class="dn btn btn_default" style="display: none;">完成</a>
+        </div>
+    </div>
+    <div class="editor_inner">
+        <div class="protable_editor divMenuContent">
+        </div>
+        <div class="editor_arrow_wrap">
+            <i class="editor_arrow editor_arrow_out"></i>
+            <i class="editor_arrow editor_arrow_in"></i>
+        </div>
+    </div>
+    <div class="tool_bar">
+        <a class="dn2 btn btn_success btnPublish">
+
+            <span>发布</span>
+            </a>
+        <a class="dn btn btn_default btnPrevice">预览</a>
+    </div>
+    <div class="divCardList"></div>
+</div>
+<div class="divPreview"></div>
+<!-- 发布成功样式 -->
+<div class="publish_alert" style="display:none;">
+    <div class="pa_cont ">
+        <div class="pa_hd">
+            <a href="javascript:;" class="pa_closed">X</a>
+        </div>
+        <div class="pa_bd">发布成功</div>
+
+    </div>
+</div>
+
+
+
+<div class="publish_alert" style="display: none;">
+    <div class="pa_cont pa_error">
+        <div class="pa_hd">
+            <a href="javascript:;" class="pa_closed">X</a>
+        </div>
+        <div class="pa_bd">发布失败</div>
+
+    </div>
+</div>
+</body>
+</html>

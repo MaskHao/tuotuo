@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信</title>
+    <link rel="stylesheet" href="dist/css/wx_menu.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.dad.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gridify-min.js"></script>
+    <script src="js/localstorage.js"></script>
+</head>
+<body>
+    <div id="wx_menu">
+        <div class="mobile_preview">
+            <div class="m_menu">
+                <div class="m-hd">聚悦健康</div>
+
+                <div class="m-bd">
+                    <ul id="mainMenu" class="pre_menu_list">
+                        <li class="pre_menu_item" style="width:100%">
+                            <a  onclick="addMenu(this)" class="pre_menu_link active" draggable="false">
+                                <i class="icon14_menu_add"></i>
+                                <span>菜单名称</span>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="m_sort" style="display: none">
+                <a id="orderBt" class="btn btn_default">菜单排序</a>
+                <a id="orderDis" onclick="submitMenuSort()" class="dn btn btn_default" style="display: none;">完成</a>
+            </div>
+        </div>
+        <div class="editor_inner" style="display: none">
+            <div class="protable_editor">
+                <div class="pe_hd">
+                    <p class="child-tip" style="display: none;"><span>子菜单名称</span><a class="delMenu" href="JavaScript:void(0);">删除子菜单</a></p>
+                    <p class="main-tip" ><span >菜单名称</span><a class="delMenu" href="JavaScript:void(0);">删除菜单</a></p>
+                </div>
+
+                <p class="hint"  style="display: none;">已添加子菜单，仅可以设置菜单名称</p>
+                <div class="menu_name">
+                    <span class="mn_name">菜单名称</span>
+                    <div class="mn_r">
+                        <input class="getName" onblur="checkName(this)" type="text" placeholder="菜单名称">
+                        <!--错误时候提示-->
+                        <p class="error" id="mn_errorMsg" style="display: none">请输入菜单名称</p>
+
+                        <p class="error2">字数不超过4个汉字或8个字母</p>
+                    </div>
+                </div>
+
+                <div class="menu_conent">
+                    <span class="mc">菜单内容</span>
+                    <label>
+                        <input type="radio" onchange="chooseMc('sendMsg')" name="select">发送消息
+                    </label>
+                    <label>
+                        <input type="radio" onchange="chooseMc('reToUrl')" name="select" checked>跳转网页
+                    </label>
+                    <div class="mc_cont" >
+                        <a class="mc_cont_letter" onclick="showList()" style="display: none;">
+                            <i class="icon36_common"></i>
+                            <p>从素材库中选择</p>
+                        </a>
+                        <div class="mc_cont_url" >
+                            <p class="url_word">订阅者点击该菜单会跳转到以下链接</p>
+                            <span class="url_address">页面地址</span>
+                            <input type="text" class="url_link">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--箭头-->
+            <div class="editor_arrow_wrap">
+                <i class="editor_arrow editor_arrow_out"></i>
+                <i class="editor_arrow editor_arrow_in"></i>
+            </div>
+        </div>
+
+        <!-- 发布 -->
+        <div class="tool_bar" style="display: none">
+            <a href="javascript:void(0);" id="submit" class="dn2 btn btn_success">发布</a>
+            <!--<a href="javascript:void(0);" id="save" class="dn2 btn btn_success">保存</a>-->
+            <!--<a href="preview.html" id="preview" class="dn btn btn_default  ">预览</a>-->
+            <a href="javascript:;" id="preview" class="dn btn btn_default  ">预览</a>
+        </div>
+
+        <!--删除时候的确认弹框样式-->
+        <div class="del_alert" style="display: none;">
+            <div class="da_cont">
+                <p class="da_hd">
+                    温馨提示
+                    <a href="javascript:void(0);" class="pop_closed"></a>
+                </p>
+                <div class="da_bd">
+                    <div class="da_bd_cont">
+                        <i class="icon_msg warn"></i>
+                        <p>删除确认</p>
+                        <span>删除后 “菜单名称” 下设置的内容将被删除</span>
+                    </div>
+
+                </div>
+                <div class="da_fot">
+                    <a href="javascript:void(0);" class="dn2 btn  btn_success">确定</a>
+                    <a href="javascript:void(0);" class="dn btn btn_default">取消</a>
+                </div>
+            </div>
+        </div>
+        <!--素材库选择-->
+        <div class="material_library" style="display: none">
+            <div class="ml_cont">
+                <div class="ml_hd">
+                    <span>选择素材</span>
+                    <a onclick="closePop()" class="pop_closed"></a>
+                </div>
+                <div class="ml_bd">
+                    <div class="ml_bd_fn">
+                        <div class="fn_serch">
+                            <input type="text" placeholder="标题/作者/摘要" class="msg_serch">
+                            <a href="javascript:;" class="serch">
+                                <i class="icon16_common serchImg"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 素材列表 瀑布流样式-->
+                    <div class="ml_bd_cont" >
+                        <div class="card">
+                             <!--消息卡片1  只有一条消息-->
+                            <div class="card_list">
+                                <a class="cl_cont">
+                                    <p class="cl_hd">老年人突发四中紧急情况的急救方法</p>
+                                    <!--图片以背景图形式显示-->
+                                    <div class="cl_hdPic" style="background-image:url(images/sport.png);"></div>
+                                    <p class="cl_des">呵呵哒</p>
+                                    <hr>
+                                    <p class="cl_ft">阅读全文 <span>&gt;</span></p>
+                                </a>
+
+                                <div class="mask">
+                                    <i class="icon_card_selected"></i>
+                                </div>
+                            </div>
+
+                             <!--消息卡片2  多条消息-->
+                            <div class="card_list">
+                                <div class="cl_cont2">
+                                    <a class="cl_top" href="javascript:;">
+                                        <div class="cltPic" style="background-image:url(images/wumai.jpg);"></div>
+                                        <p class="cltWord">多列表的头部标题</p>
+                                    </a>
+                                    <div class="cl_ct">
+                                        <a class="tow" href="javascript:;">
+                                            <p><span>是个那两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两个电话</span> </p>
+                                            <div class="pic" style="background-image:url(images/sport.png);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="cl_ct">
+                                        <a class="tow" href="javascript:;">
+                                            <p><span>是个那两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两个电话</span> </p>
+                                            <div class="pic" style="background-image:url(images/sport.png);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="cl_ct">
+                                        <a class="tow" href="javascript:;">
+                                            <p><span>是个那两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两个电话</span> </p>
+                                            <div class="pic" style="background-image:url(images/sport.png);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="cl_ct">
+                                        <a class="tow" href="javascript:;">
+                                            <p><span>是个那两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两两个电话是个那两个电话是个那两个电话</span> </p>
+                                            <div class="pic" style="background-image:url(images/sport.png);"></div>
+                                        </a>
+                                    </div>
+                                    <div class="cl_ct">
+                                        <a class="tow" href="javascript:;">
+                                            <p><span>adafsvdbdb</span></p>
+                                            <div class="pic" style="background-image:url(images/sport.png);"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="mask">
+                                    <i class="icon_card_selected"></i>
+                                </div>
+                            </div>
+                            <!--<div class="card_list">-->
+
+                                <!--<a class="cl_cont" href="javascript:;">-->
+                                    <!--<p class="cl_hd">老年人突发四中紧急情况的急救方法</p>-->
+                                    <!--&lt;!&ndash;图片以背景图形式显示&ndash;&gt;-->
+                                    <!--<div class="cl_hdPic" style="background-image:url(images/sport.png);"></div>-->
+                                    <!--<p class="cl_des">呵呵哒</p>-->
+                                    <!--<hr>-->
+                                    <!--<p class="cl_ft">阅读全文 <span>&gt;</span></p>-->
+                                <!--</a>-->
+
+                                <!--<div class="mask">-->
+                                    <!--<i class="icon_card_selected"></i>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="card_list">-->
+                                <!--<div class="cl_cont2">-->
+                                    <!--<a class="cl_top" href="javascript:;">-->
+                                        <!--<div class="cltPic" style="background-image:url(images/wumai.jpg);"></div>-->
+                                        <!--<p class="cltWord">多列表的头部标题</p>-->
+                                    <!--</a>-->
+                                    <!--<div class="cl_ct">-->
+                                        <!--<a class="tow" href="javascript:;">-->
+                                            <!--<p>是个那两个电话是个那两个电话是个那两个电话 </p>-->
+                                            <!--<div class="pic" style="background-image:url(images/sport.png);"></div>-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                    <!--<div class="cl_ct">-->
+                                        <!--<a class="tow" href="javascript:;">-->
+                                            <!--<p>adafsvdbdb</p>-->
+                                            <!--<div class="pic" style="background-image:url(images/sport.png);"></div>-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="mask">-->
+                                    <!--<i class="icon_card_selected"></i>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ml_ft">
+                    <a href="javascript:;" class="btn btn_success">确定</a>
+                    <a onclick="closePop()" class="btn btn_default">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 预览效果 -->
+    <div class="preview" style="display:none;">
+        <div class="pw_cont">
+            <div class="pw_hd">
+                <strong class="nickname">聚悦健康</strong>
+            </div>
+            <div class="pw_bd">
+                <div class="card_list" >
+                    <a class="cl_cont">
+                        <p class="cl_hd">老年人突发四中紧急情况的急救方法</p>
+                        <!--图片以背景图形式显示-->
+                        <div class="cl_hdPic" style="background-image:url(images/sport.png);"></div>
+                        <p class="cl_des">呵呵哒</p>
+                        <hr>
+                        <p class="cl_ft">阅读全文 <span>&gt;</span></p>
+                    </a>
+                </div>
+
+                <!-- 消息卡片2  多条消息 -->
+                <div class="card_list"   >
+                    <div class="cl_cont2">
+                        <a class="cl_top" href="javascript:;">
+                            <div class="cltPic" style="background-image:url(images/wumai.jpg);"></div>
+                            <p class="cltWord">多列表的头部标题</p>
+                        </a>
+                        <div class="cl_ct">
+                            <a class="tow" href="javascript:;">
+                                <p><span>是个那两个电话是个那两个电话是个那两个电话</span> </p>
+                                <div class="pic" style="background-image:url(images/sport.png);"></div>
+                            </a>
+                        </div>
+                        <div class="cl_ct">
+                            <a class="tow" href="javascript:;">
+                                <p><span>公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法公司工会法</span></p>
+                                <div class="pic" style="background-image:url(images/sport.png);"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pw_ft">
+                <ul class="pre_menu_list">
+
+                </ul>
+            </div>
+            <a class="btn btn_default pw_closed">退出预览</a>
+        </div>
+    </div>
+    <!-- 发布成功样式 -->
+    <!--<div class="publish_alert" >-->
+        <!--<div class="pa_cont">-->
+            <!--<div class="pa_hd">-->
+                <!--<a href="javascript:;" class="pop_closed"></a>-->
+            <!--</div>-->
+            <!--<div class="pa_bd">发布成功</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</body>
+</html>

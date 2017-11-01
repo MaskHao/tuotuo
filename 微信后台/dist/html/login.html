@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<div id="wx_login">
+    <div class="fn">
+        <input class="pass" type="password" placeholder="输入密码">
+        <input class="submit" type="button" value="确认">
+    </div>
+</div>
+    <div class="publish_alert " style="display: none">
+        <div class="pa_bd">密码错误</div>
+    </div>
+<script>
+    var pass = document.getElementsByClassName("pass")[0];
+    var sub = document.getElementsByClassName("submit")[0];
+    var alert = document.getElementsByClassName("publish_alert")[0];
+    var timer = null;
+    sub.onclick = function () {
+        var alert = document.getElementsByClassName("publish_alert")[0];
+        var passValue = pass.value;
+        console.log(passValue);
+        if(passValue == '123456!'){
+            window.location.href = "menu.html";
+        }else {
+            $(".publish_alert").css("display","block");
+            $(".publish_alert").animate({
+                "top":"70%",
+                "opacity":'0'
+            },2000,function(){
+                $(this).css({
+                    "display":"none",
+                    "opacity":"1",
+                    "top":"45%"
+                });
+            })
+        }
+    }
+</script>
+</body>
+</html>
