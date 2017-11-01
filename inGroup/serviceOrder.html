@@ -1,0 +1,151 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>服务订购</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="/jy/conf/config.js"></script>
+    <script src="scripts/module/common.js"></script>
+    <link rel="stylesheet" href="scripts/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/styles/iconfont/iconfont.css">
+    <link rel="stylesheet" href="Content/styles/fastGroup.css">
+    <script src="scripts/libs/flexible/flexible.js"></script>
+    <script src="scripts/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="scripts/libs/TweenMax/tweenMax.min.js"></script>
+    <script src="scripts/module/doctorInfo.js"></script>
+    <script src="scripts/libs/mustache/mustache.js"></script>
+    <script src="scripts/libs/lodash/lodash-3.10.1.min.js"></script>
+    <script src="scripts/libs/selectTree/bootstrap-treeview.min.js"></script>
+    <script src="scripts/libs/TweenMax/TweenMax.min.js"></script>
+    <script src="scripts/app/serviceOrder.js?v=1"></script>
+    <script src="scripts/module/storage.js"></script>
+</head>
+<body>
+
+<div class="page-count">
+    <!-- 服务订购 -->
+    <div class="page serveOrder">
+        <div class="content divContent">
+            <!--四个下拉框-->
+            <div class="item-content clear selCont">
+                <div class="sel sel-type btnAreaId">
+                    <div class="sel-hd">
+                        <span class="sel-title textAreaId">区域</span>
+                        <i class="iconfont icon-jiantousanjiaobiao-xia"></i>
+                    </div>
+                </div>
+                <div class="sel sel-type btnOrgId">
+                    <div class="sel-hd">
+                        <span class="sel-title textOrgId">医院</span>
+                        <i class="iconfont icon-jiantousanjiaobiao-xia"></i>
+                    </div>
+                </div>
+                <div class="sel sel-type btnTeamId">
+                    <div class="sel-hd">
+                        <span class="sel-title textTeamId">团队</span>
+                        <i class="iconfont icon-jiantousanjiaobiao-xia"></i>
+                    </div>
+                </div>
+                <div class="sel sel-type btnServiceTypeId">
+                    <div class="sel-hd">
+                        <span class="sel-title txtServiceTypeId">服务类型</span>
+                        <i class="iconfont icon-jiantousanjiaobiao-xia"></i>
+                    </div>
+                </div>
+
+                <div id="ulAreaId" class="ulAreaId" style="display:none ;"> </div>
+                <div class="sel-ct">
+                    <!--医院下拉-->
+                    <ul class="sel-type-ct ulOrgId" style="display: none;">
+                    </ul>
+                    <!--团队下拉-->
+                    <ul class="sel-type-ct ulTeamId" style="display: none;">
+                    </ul>
+                    <!--服务分类下拉 被删除-->
+                    <!--<ul class="sel-type-ct ulServiceType" style="display: none;">-->
+                    <!--</ul>-->
+                    <!--服务类型下拉-->
+                    <ul class="ssel-classify-ct ulServiceTypeId" style="display: none">
+                    </ul>
+                </div>
+            </div>
+
+            <!--服务内容搜索-->
+            <div class="item-content">
+                <!--noInput-->
+                <div class="item-inner serveSearch clear noInput">
+                    <div class="search-input ">
+                        <i class="search-icon iconfont icon-sousuo"></i>
+                        <input name="input" class="serveSearch-input txtContent" placeholder="搜索服务内容">
+                        <i class="search-icon iconfont icon-iconshanchu"></i>
+                        <!--<a href="javascript:void(0)" class="serveSearch-Btn btn btn-color1 btnSearch">搜索</a>-->
+                    </div>
+                   <div class="search-cancel">
+                       <a href="javascript:void(0);">取消</a>
+                   </div>
+                </div>
+            </div>
+            <!--cardList-->
+            <div class="serveCard card">
+                <!--<ul class="divList" >-->
+                    <!--<li>-->
+                        <!--<div class="li-container clear">-->
+                            <!--<a class="serveLi clear" href="pay.html?upId={{upId}}&productId={{productId}}">-->
+                                <!--<div class="serveLi-sel">-->
+                                    <!--<i class="icon-isSel iconfont icon-yuanquan1"></i>-->
+                                <!--</div>-->
+                                <!--<div class="serveLi-cont">-->
+                                    <!--<p class="serveTypeName">高血压套餐高血压套餐高血压套餐高血压套餐</p>-->
+                                    <!--<div class="serceClass clear">-->
+                                        <!--<div class="serceClassName">套餐：<span class="name">是大大大是的</span></div>-->
+                                        <!--<div class="serveClassPrice">-->
+                                            <!--<span class="price">3年<em class="priceNumber">500</em>元</span>&nbsp;/&nbsp;<span class="oldPriceNumber">剩余999</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<p class="provider">供应商&nbsp;:&nbsp;<span class="providerName">常静团队</span></p>-->
+                                <!--</div>-->
+                                <!--<div class="cancel-stick"><div class="sticked"></div>取消置顶</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="li-container clear">-->
+                            <!--<a class="serveLi clear" href="pay.html?upId={{upId}}&productId={{productId}}">-->
+                                <!--<div class="serveLi-sel">-->
+                                    <!--<i class="icon-isSel iconfont icon-yuanquan1"></i>-->
+                                <!--</div>-->
+                                <!--<div class="serveLi-cont">-->
+                                    <!--<p class="serveTypeName">高血压高血压套餐高血压套餐套餐</p>-->
+                                    <!--<div class="serceClass clear">-->
+                                        <!--<div class="serceClassName">套餐：<span class="name">是大大大是的</span></div>-->
+                                        <!--<div class="serveClassPrice">-->
+                                            <!--<span class="price">3年<em class="priceNumber">500</em>元</span>&nbsp;/&nbsp;<span class="oldPriceNumber">剩余999</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<p class="provider">供应商&nbsp;:&nbsp;<span class="providerName">常静团队</span></p>-->
+                                <!--</div>-->
+                                <!--<div class="select-stick">置顶</div>-->
+                            <!--</a>-->
+
+                        <!--</div>-->
+
+                    <!--</li>-->
+                <!--</ul>-->
+                <ul class="divList "></ul>
+            </div>
+
+            <div class="sub serveBtn">
+                <!--btn-selected-->
+                <a class="btn btn-lg btnSubmit btn-selected" href="javascript:void(0)">提交</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+

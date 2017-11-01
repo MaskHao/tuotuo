@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>服务订购</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="/jy/conf/config.js"></script>
+    <script src="scripts/module/common.js"></script>
+    <link rel="stylesheet" href="scripts/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/styles/iconfont/iconfont.css">
+    <link rel="stylesheet" href="Content/styles/fastGroup.css">
+    <link rel="stylesheet" href="scripts/libs/mobiscroll-custom-2.17.0/mobiscroll.custom-2.17.0.min.css">
+    <script src="scripts/libs/flexible/flexible.js"></script>
+    <script src="scripts/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="scripts/libs/moment/moment.js"></script>
+    <script src="scripts/libs/mobiscroll-custom-2.17.0/mobiscroll.custom-2.17.0.min.js"></script>
+    <script src="scripts/module/doctorInfo.js"></script>
+    <script src="scripts/libs/mustache/mustache.js"></script>
+    <script src="scripts/libs/lodash/lodash-3.10.1.min.js"></script>
+    <script src="scripts/app/pay.js?v=1"></script>
+    <!--<script src="scripts/module/returnLogin.js"></script>-->
+    <script src="scripts/libs/textarea/autosize.min.js"></script>
+</head>
+<body>
+<div class="page-count">
+    <!--支付-->
+    <div class="page pay divPayContent">
+        <div class="content">
+            <div class="item-content ServeList">
+                <div class="item-inner">
+                    <span class="item-title ">基础服务</span>
+                </div>
+                <div class="ServeList-ct">
+                    <ul class="divBaseService"></ul>
+                </div>
+            </div>
+            <div class="item-content ServeList userSelectService">
+                <div class="item-inner">
+                    <span class="item-title ">自选服务</span>
+                </div>
+                <div class="ServeList-ct divIncrementService">
+                </div>
+            </div>
+            <div class="card">
+                <div class="item-content pageType">
+                    <div class="item-inner user">
+                        <span class="item-title">用户姓名</span>
+                        <span class="item-title userName spanUserName"></span>
+                    </div>
+                </div>
+                <div class="item-content pageType">
+                    <div class="item-inner IDcard">
+                        <span class="item-title">身份证号</span>
+                        <span class="item-title idCard spanIdCard"></span>
+                    </div>
+                </div>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <span class="item-title">服务开始时间</span>
+                        <span class="item-title startTime txtStartTime">选择时间</span>
+                    </div>
+                </div>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <span class="item-title">服务结束时间</span>
+                        <span class="item-title endTime txtEndTime"></span>
+
+                    </div>
+                </div>
+                <div class="item-content  money">
+                    <div class="item-inner">
+                        <span class="item-title">金额</span>
+                        <span class="moneyNum"><em class="divEmMoney"></em>元</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sub selectService" style="display: none">
+                <a class="sub-filing btn btn-color1 btn-lg" href="javascript:void(0)">提交</a>
+            </div>
+
+            <!--金额为0的无需   弹框确认+跳转到支付宝页面-->
+            <div class="sub divConfirm" style="display: none">
+                <a class="sub-filing btn btn-color1 btn-lg btnPayComfirm" href="javascript:void(0)">确认</a>
+            </div>
+            <!--跳转到支付宝页面-->
+            <div class="divPay" style="display: none">
+                <div class="sub">
+                    <a data-payWayCode="XJ" class="sub-filing btn btn-color2 btn-lg btnPayByCash" href="javascript:void(0)">现金</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="page mastIn divNeedContent" style="display: none">
+        <div class="content divNeedList">
+            <div class="item-content">
+                <div class="item-inner ">
+                    <span class="item-title">项目</span>
+                    <span class="item-title">类型</span>
+                    <span class="item-title">值</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="sub">
+            <a href="javascript:void(0)" class="btn btn-color1 btn-lg btnNeedNext">下一步</a>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
