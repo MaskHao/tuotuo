@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>亲友支付</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="jy/conf/config.js"></script>
+    <script src="scripts/module/common.js"></script>
+    <script src="scripts/libs/moment/moment.js"></script>
+    <link rel="stylesheet" href="scripts/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/styles/friendPay.css">
+    <link rel="stylesheet" href="Content/styles/icon/iconfont.css">
+    <script src="scripts/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="scripts/libs/mustache/mustache.js"></script>
+    <script src="scripts/libs/lodash/lodash-3.10.1.min.js"></script>
+</head>
+<body>
+<script>
+        var ZFBURL = Common.getQueryString('ZFBURL');
+        console.log(decodeURIComponent(ZFBURL));
+//        if(!Common.isWeiXin()){
+//            alert(ZFBURL);
+//            window.location.href = decodeURIComponent(ZFBURL);
+//        }
+</script>
+<div class="friendPay-ZFB">
+    <img class="ZFB-link-line" src="Content/images/icon@2x.png"/>
+    <div class="ZFB-msg">请点击右上角的“...”按钮，选择在游览器中打开。</div>
+</div>
+
+</body>
+</html>

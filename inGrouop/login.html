@@ -1,0 +1,248 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>快速登记</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="/jy/conf/config.js"></script>
+    <script src="scripts/module/common.js"></script>
+    <link rel="stylesheet" href="scripts/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="Content/styles/iconfont/iconfont.css">
+    <script src="scripts/libs/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="Content/styles/fastGroup.css">
+    <script src="scripts/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="scripts/module/doctorInfo.js"></script>
+    <script src="scripts/libs/mustache/mustache.js"></script>
+    <script src="scripts/libs/lodash/lodash-3.10.1.min.js"></script>
+    <script src="scripts/module/storage.js"></script>
+    <script src="scripts/app/login.js"></script>
+    <script src="scripts/libs/selectTree/bootstrap-treeview.min.js"></script>
+</head>
+<body>
+
+<div class="page-count">
+    <!--用户登记-->
+    <div class="page login">
+        <div class="content">
+            <!--未填信息则添加 borderError-->
+            <div class="item-content">
+                <div class="item-inner">
+                    <span class="item-title"><em class="mustInput">*</em>姓名</span>
+                    <input type="text" data-field="userName" data-role="require" class="txtField txtUserName"
+                           placeholder="姓名">
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="item-inner">
+                    <span class="item-title"><em class="mustInput">*</em>手机号</span>
+                    <input type="number" data-field="mobile" data-role="require mobile" class="txtField txtMobile"
+                           placeholder="手机号">
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="item-inner">
+                    <span class="item-title"><em class="mustInput">*</em>验证码</span>
+                    <input type="text" data-field="randomCode" data-role="require"
+                           class="vertiInput txtField txtRandomCode"
+                           placeholder="输入验证码">
+                    <a href="javascript:void(0)" class="btn btn-sub btnSend">发送</a>
+                </div>
+            </div>
+            <div class="item-content">
+                <div class="item-inner">
+                    <span class="item-title">身份证</span>
+                    <input type="text" data-field="idCard" data-role=" idcard" class="txtField txtIdCard"
+                           placeholder="身份证号">
+                </div>
+            </div>
+
+
+            <!--疾病诊断搜索+下拉框+显示ul-->
+            <div class="item-content search">
+                <div class="item-inner">
+                    <span class="item-title">疾病诊断</span>
+                    <input class=" txtIll" type="text" placeholder="请输入疾病名称或拼音搜索">
+                </div>
+                <div class="select-con drpIll" style="display: none;">
+                    <ul class="ulIll">
+                    </ul>
+                </div>
+                <div class="selcted-con divDisease">
+                </div>
+            </div>
+
+            <!--服务套餐-->
+            <div class="item-content server">
+                <div class="item-inner">
+                    <span class="item-title">服务套餐</span>
+                    <a class="serveSelect">选择套餐<em class="iconfont icon-chevron-copy-copy-copy"></em></a>
+                </div>
+                <div class="item-inner serveLi selectedService" style="display:none ;">
+                    <div class="serveLi-cont">
+                        <p class="serveTypeName">李密专家团队小组聚家试用套餐 </p>
+                        <div class="serceClass clear">
+                            <div class="serceClassName">
+                                套餐<span class="name">高血压服务</span>
+                            </div>
+                            <div class="serveClassPrice">
+                                <span class="price">1年<em class="priceNumber">600</em>元</span>&nbsp;/&nbsp;<span
+                                    class="oldPriceNumber">剩余300</span>
+                            </div>
+                        </div>
+                        <p class="provider">供应商&nbsp;:&nbsp;<span class="providerName">常静专家团队</span></p>
+                    </div>
+                </div>
+                <input type="hidden" data-field="upId" class="txtField hdUpId"/>
+            </div>
+
+            <!--用户来源 + 下拉框绝对定位-->
+            <div class="item-content sourceOrgId">
+                <div class="item-inner drpSourceOrgId">
+                    <span class="item-title">用户来源</span>
+                    <div class="select clear">
+                        <span class="userFrom txtSourceOrgId"></span>
+                        <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                    </div>
+                </div>
+                <div class="select-con drpHidden" style="display: none;">
+                    <ul class="ulSourceOrgId">
+                    </ul>
+                </div>
+                <input type="hidden" data-field="sourceOrgId" class="txtField hdSourceOrgId"/>
+            </div>
+
+
+            <!--用户标识 -->
+            <div class="item-content userType">
+                <div class="item-inner">
+                    <span class="item-title">用户标识</span>
+                    <label class="lblUserType" data-val="1">
+                        <div class="selectCheck">
+                            <i class="iconfont icon-gouxuan2"></i>
+                        </div>
+                        <div class="label-con">
+                            <span>普通用户</span>
+                        </div>
+                    </label>
+                    <label class="lblUserType" data-val="2">
+                        <div class="selectCheck">
+                            <i class="iconfont icon-yuanquan1"></i>
+                        </div>
+                        <div class="label-con">
+                            <span>集团用户</span>
+                        </div>
+                    </label>
+                </div>
+                <input type="hidden" data-field="userType" class="txtField hdUserType" value="1"/>
+            </div>
+            <!--所属集团-->
+            <div class="item-content" style="display: none">
+                <div class="item-inner drpUserGroup">
+                    <span class="item-title">所属集团</span>
+                    <div class="select clear">
+                        <span class="userFrom txtUserGroup"></span>
+                        <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                    </div>
+                </div>
+                <div class="select-con drpHidden" style="display: none;">
+                    <ul class="ulUserGroup">
+                    </ul>
+                </div>
+                <input type="hidden" data-field="blocId" class="txtField hdUserGroup"/>
+            </div>
+            <!--客户类型-->
+            <div class="item-content" style="display: none">
+                <div class="item-inner drpUserRank">
+                    <span class="item-title">客户类型</span>
+                    <div class="select clear">
+                        <span class="userFrom txtUserRank"></span>
+                        <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                    </div>
+                </div>
+                <div class="select-con drpHidden" style="display: none;">
+                    <ul class="ulUserRank">
+                    </ul>
+                </div>
+                <input type="hidden" data-field="blocRank" class="txtField hdUserRank"/>
+            </div>
+            <!--查看更多-->
+            <div class="item-content checkMore" style="display: none;">
+                <div class="cm-btn btnMore">查看更多 <em class="iconfont icon-chevron-copy-copy-copy"></em></div>
+                <div class="cm-con divMore" style="display: none;">
+                    <!--认证方式-->
+                    <div class="item-content">
+                        <div class="item-inner drpAuthType">
+                            <span class="item-title">认证方式</span>
+                            <div class="select clear">
+                                <span class="userFrom txtAuthType"></span>
+                                <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                            </div>
+                        </div>
+                        <div class="select-con drpHidden" style="display: none;">
+                            <ul class="ulAuthType">
+                            </ul>
+                        </div>
+                        <input type="hidden" data-field="authTypeId" class="txtField hdAuthType"/>
+                    </div>
+                    <!--认证机构-->
+                    <div class="item-content">
+                        <div class="item-inner drpOrg">
+                            <span class="item-title">认证机构</span>
+                            <div class="select clear">
+                                <span class="userFrom txtOrg"></span>
+                                <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                            </div>
+                        </div>
+                        <div class="select-con drpHidden" style="display: none;">
+                            <ul class="ulOrg">
+                            </ul>
+                        </div>
+                        <input type="hidden" data-field="orgId" class="txtField hdOrg"/>
+                    </div>
+                    <!--选择卡类型-->
+                    <div class="item-content">
+                        <div class="item-inner drpCardType">
+                            <span class="item-title">选择卡类型</span>
+                            <div class="select clear">
+                                <span class="userFrom txtCardType"></span>
+                                <em class="iconfont icon-chevron-copy-copy-copy"></em>
+                            </div>
+                        </div>
+                        <div class="select-con drpHidden" style="display: none;">
+                            <ul class="ulCardType">
+                            </ul>
+                        </div>
+                        <input type="hidden" data-field="cardTypeId" class="txtField hdCardType"/>
+                    </div>
+                    <!--卡号-->
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <span class="item-title">卡号</span>
+                            <input type="text" data-field="cardNo" class="txtField" placeholder="卡号">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub ">
+                <a class="sub-filing btn btn-color1 btn-lg btnSubmit" href="javascript:void(0)">提交</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--弹框-->
+<div class="poup divPoup" style="display:none ;">
+    <div class="poup-cont poup-filing tran" style="display: none">
+        <p class="p-hd">温馨提示</p>
+        <p class="p-ct">建档成功，<span class="">3</span>秒后即将跳转至订购界面</p>
+        <div class="sub">
+            <a class="btn btn-color1 btn-next" href="">继续登记</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
