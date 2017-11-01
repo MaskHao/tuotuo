@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医院介绍</title>
+    <link rel="stylesheet" href="./dist/css/hos-intro.css">
+</head>
+<body>
+    <div class="intro-container">
+        <div class="hos-content-wrap">
+            <p> 重庆医科大学附属第二医院心内科始建于80年代初，由我国老一辈著名心血管病学专家李德旺、黄慧、李增高和罗开良教授等创建而成。经
+                重庆医科大学附属第二医院心内科始建于80年代初，由我国老一辈著名心血管病学专家李德旺、黄慧、李增高和罗开良教授等创建而成。经
+                重庆医科大学附属第二医院心内科始建于80年代初，由我国老一辈著名心血管病学专家李德旺、黄慧、李增高和罗开良教授等创建而成。经</p>
+        </div>
+        <div class="doc-intro-container">
+            <div class="doc-intro">
+                <div class="doc">
+                    <div class="name-wrap tx-right"><span class="tit">主治医生</span><span class="name">常静</span></div>
+                    <p class="doc-msg">学科带头人，科副主任；中共党员，医学博士，教授/主任医师，硕士生导师 </p>
+                </div>
+                <div class="circle">
+                    <div class="in-circle doc-circle-left"></div>
+                    <div class="out-circle doc-circle-right"></div>
+                </div>
+                <div class="doc-underline"></div>
+            </div>
+        </div>
+        <div class="small-star starflash"></div>
+        <div class="mid-star star2flash"></div>
+        <div class="big-star star3flash"></div>
+    </div>
+
+    <script src="../js/star.js"></script>
+    <script>
+        var star = document.querySelector('.small-star'),
+                star2 = document.querySelector('.mid-star'),
+                star3 = document.querySelector('.big-star'),
+                container = document.querySelector('.intro-container');
+        var stars = new Stars(container, star, star2, star3,10,10,30);
+        stars.drawStars();
+    </script>
+</body>
+</html>

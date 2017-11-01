@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医生信息</title>
+    <link rel="stylesheet" href="./dist/css/doc-msg.css">
+</head>
+<body>
+<div class="doc-container">
+</div>
+<script>
+//    var AVATARPATH = './images-new/images-avatar/',
+    var AVATARPATH = '/images-new/images-new-avatar/',
+            TEAMPATH = '/images-new/images-team/',
+            ANIMATETIME = 15000,
+            ROLLIN = 'rollin',
+            ROLLOUT = 'rollout';
+//    var docNames = ['肖登','陈明','张晓刚','邓辉胜','何靖','丁福','朱竹青','何泉','肖骅','张冬颖','高凌云','万里洋'];
+//    var docNames = ['张楠','段兴连'];
+//    var docMsgs = [
+//        {
+//            name:docNames[0],
+//            avatar: AVATARPATH + docNames[0] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学博士，住院医师，主要研究方向为冠心病与microRNA分子机制。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[5] + '.png'
+//        },
+//        {
+//            name:docNames[1],
+//            avatar: AVATARPATH + docNames[1] +  '.jpg',
+//            tit:'健康顾问 （心血管疾病）',
+//            intro:'医学硕士，住院医生。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] + '.png'
+//        },
+
+//    var docMsgs = [
+//        {
+//            name:docNames[0],
+//            avatar: AVATARPATH + docNames[0] +  '.jpg',
+//            tit:'首席专家（康复科）',
+//            intro:'中共党员，主治医师，复医学硕士学位，现博士在读。',
+//            hos:'重庆医科大学附属康复医院',
+//            teamImg: TEAMPATH + docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[1],
+//            avatar: AVATARPATH + docNames[1] +  '.jpg',
+//            tit:'首席专家（高血压）',
+//            intro:'教授，主任医师，硕士生导师，现任中国医师协会高血压分会全国委员和中国医师协会中西结合委员会全国委员等。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] +'.png'
+//        },
+//        {
+//            name:docNames[2],
+//            avatar: AVATARPATH + docNames[2] +  '.jpg',
+//            tit:'首席专家（冠心病、高血压）',
+//            intro:'主任医师，教授，医学博士，硕士生导师，擅长治疗冠心病、高血压病。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[3],
+//            avatar: AVATARPATH + docNames[3] +  '.jpg',
+//            tit:'首席专家（心血管疾病）',
+//            intro:'医学博士，主任医师，副教授，硕士研究生导师，主要从事心血管疾病及医学生物工程研究，主持及参与国家自然科学基金两项。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[4],
+//            avatar: AVATARPATH + docNames[4] +  '.jpg',
+//            tit:'首席专家（呼吸系统常见病）',
+//            intro:'医学博士，重庆医科大学附属第二医院呼吸内科医师。',
+//            hos:'重庆医科大学附属二院',
+//            teamImg: TEAMPATH +  docNames[4] + '.png'
+//        },
+//        {
+//            name:docNames[5],
+//            avatar: AVATARPATH + docNames[5] +  '.jpg',
+//            tit:'首席专家（护理）',
+//            intro:'副主任护师，护理学本科，管理学硕士，护理学硕士研究生导师。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[5] + '.png'
+//        },
+//        {
+//            name:docNames[6],
+//            avatar: AVATARPATH + docNames[6] +  '.jpg',
+//            tit:'主管医生（康复科）',
+//            intro:'住院医师，医学硕士，发表论著、综述各一篇。',
+//            hos:'重庆医科大学附属康复医院',
+//            teamImg: TEAMPATH +  docNames[6] + '.png'
+//        },
+//        {
+//            name:docNames[7],
+//            avatar: AVATARPATH + docNames[7] +  '.jpg',
+//            tit:'主管医生（高血压）',
+//            intro:'副主任医师，副教授，医学博士。中华医学会心电生理和起搏分会青年委员、中国生物医学工程学会心律分会房颤工作委员会委员。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[7] + '.png'
+//        },
+//        {
+//            name:docNames[8],
+//            avatar: AVATARPATH + docNames[8] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'副教授，副主任医师，医学博士，硕士生导师。担任重庆医科大学附属第一医院九三学社副主任委员，中华医学会重庆心血管分会青年委员。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[8] + '.png'
+//        },
+//        {
+//            name:docNames[9],
+//            avatar: AVATARPATH + docNames[9] +  '.jpg',
+//            tit:'主管医生（高血压、冠心病）',
+//            intro:'副主任医师，医学博士，副教授，硕士研究生导师。瑞典卡罗林斯卡医学院博士学位。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[10],
+//            avatar: AVATARPATH + docNames[10] +  '.jpg',
+//            tit:'主管医生（高血压、冠心病）',
+//            intro:'副主任医师，副教授，博士后。2006年毕业于第三军医大学，获内科学博士学位。主持并参与多项课，发表中英文论文20余篇。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[11],
+//            avatar: AVATARPATH + docNames[11] +  '.jpg',
+//            tit:'主管医生（常见精神疾病）',
+//            intro:'硕士研究生，医师。并参与国家级、省市级青少年心理健康课题的研究。',
+//            hos:'重庆医科大学大学城医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//    ];
+
+    var docMsgs = [
+        {
+            name: '李姣',
+            avatar: AVATARPATH + '李姣' +  '.jpg',
+            tit:'健康顾问（心胸外科）',
+            intro:'毕业于重庆医科大学，护理系，本科，职称：护士2008-2012在第三军医大学新桥医院胸外科工作。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '王敬',
+            avatar: AVATARPATH + '王敬' +  '.jpg',
+            tit:'健康顾问（内分泌科）',
+            intro:'毕业于重庆医科大学护理学专业，本科学历，护师职称，曾在重庆医科大学附属第一医院手术室工作6年。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '黄玮',
+            avatar: AVATARPATH + '黄玮' +  '.jpg',
+            tit:'首席专家（心脑血管疾病）',
+            intro:'主任医师、教授，博士学位，硕士生导师。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '杨怡',
+            avatar: AVATARPATH + '杨怡' +  '.jpg',
+            tit:'健康顾问（慢病管理）',
+            intro:'护师，健康管理师，毕业于重庆医科大学卫生学校具有儿科、内科、外科的丰富临床经验。具有健康管理师证，擅长中老年人慢病管理。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '丁灵',
+            avatar: AVATARPATH + '丁灵' +  '.jpg',
+            tit:'健康顾问（护理）',
+            intro:'执业护士，毕业于重庆医药高等专科学校，九龙坡区第二人民医院内四科从事临床护理工作，热心护理事业。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '陈明',
+            avatar: AVATARPATH + '陈明' +  '.jpg',
+            tit:'首席专家（高血压）',
+            intro:'教授，主任医师，硕士生导师，现任中国医师协会高血压分会全国委员和中国医师协会中西结合委员会全国委员等。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '吴汶栖',
+            avatar: AVATARPATH + '吴汶栖' +  '.jpg',
+            tit:'健康顾问（护理）',
+            intro:'毕业于中南大学护理本科，执护师资格证。于新桥医院神经内科和格林医院康复科工作十年余。熟练掌握专业技术知识以及临床操作技能，能很好的处理护患关系。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '邓辉胜',
+            avatar: AVATARPATH + '邓辉胜' +  '.jpg',
+            tit:'首席专家（心血管疾病）',
+            intro:'医学博士，主任医师，副教授，硕士生导师，主要从事心血管疾病及医学生物工程研究，主持及参与国家自然科学基金两项。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '傅航',
+            avatar: AVATARPATH + '傅航' +  '.jpg',
+            tit:'主管医生（心血管疾病）',
+            intro:'医学硕士，在读博士，主治医师。擅长心血管内科专业常见病，多发病的治疗，对冠心病，心力衰竭有一定研究，并从事冠脉介入治疗。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },{
+            name: '常静',
+            avatar: AVATARPATH + '常静' +  '.jpg',
+            tit:'首席专家（心脑血管疾病）',
+            intro:'重庆医科大学附属第一医院心血管内科教授、主任医师、硕士生导师。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        }
+    ];
+</script>
+<script src="./lib/TweenMax.min.js"></script>
+<script src="./lib/jquery-3.1.1.min.js"></script>
+<script src="./js/docmsg.js"></script>
+</body>
+</html>

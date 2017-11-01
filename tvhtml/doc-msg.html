@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>医生信息</title>
+    <link rel="stylesheet" href="./dist/css/doc-msg.css">
+</head>
+<body>
+<div class="doc-container">
+</div>
+<script>
+//    var AVATARPATH = './images-new/images-avatar/',
+    var AVATARPATH = './images-new/images-new-avatar/',
+            TEAMPATH = './images-new/images-team/',
+            ANIMATETIME = 6000,
+            ROLLIN = 'rollin',
+            ROLLOUT = 'rollout';
+//    var docNames = ['常静','黄玮','周建中','王我','傅航','张楠','毛敏','文莉','封盼攀','顾俊','向睿','周晓莉','张爽','万里洋'];
+//    var docNames = ['常静','黄玮','周建中','王我'];
+//    var docMsgs = [
+//        {
+//            name:docNames[0],
+//            avatar: AVATARPATH + docNames[0] +  '.jpg',
+//            tit:'首席专家（心脑血管疾病）',
+//            intro:'重庆医科大学附属第一医院心血管内科副教授、主任医师、硕士生导师。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[1],
+//            avatar: AVATARPATH + docNames[1] +  '.jpg',
+//            tit:'首席专家（心脑血管疾病）',
+//            intro:'主任医师、副教授，博士学位，硕士生导师。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] +'.png'
+//        },
+//        {
+//            name:docNames[2],
+//            avatar: AVATARPATH + docNames[2] +  '.jpg',
+//            tit:'首席专家（心内科）',
+//            intro:'心内科教授，主任医师，硕士生导师',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH + docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[3],
+//            avatar: AVATARPATH + docNames[3] +  '.jpg',
+//            tit:'首席专家（常见精神疾病）',
+//            intro:'硕士研究生，主治医师，国家二级心理咨询师，现任重庆医科大学附属大学城医院心理卫生中心副主任，中共党员。',
+//            hos:'重庆医科大学大学城医院',
+//            teamImg: TEAMPATH +  docNames[3] + '.png'
+//        },
+//        {
+//            name:docNames[4],
+//            avatar: AVATARPATH + docNames[4] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学硕士，在读博士，主治医师。擅长心血管内科专业常见病，多发病的治疗，对冠心病，心力衰竭有一定研究，并从事冠脉介入治疗。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[4] + '.png'
+//        },
+//        {
+//            name:docNames[5],
+//            avatar: AVATARPATH + docNames[5] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学博士，住院医师，主要研究方向为冠心病与microRNA分子机制。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[5] + '.png'
+//        },
+//        {
+//            name:docNames[6],
+//            avatar: AVATARPATH + docNames[6] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学博士，主治医师，主要研究方向为脂质代谢紊乱、冠心病、高血压的发病机制。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[6] + '.png'
+//        },
+//        {
+//            name:docNames[7],
+//            avatar: AVATARPATH + docNames[7] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'中共党员，医学博士，住院医师。期间获各省、校、学院各级奖励20余次，发表SCI和CSCD论文10余篇。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[7] + '.png'
+//        },
+//        {
+//            name:docNames[8],
+//            avatar: AVATARPATH + docNames[0] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学硕士，住院医师，发表学术文章4篇。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[8] + '.png'
+//        },
+//        {
+//            name:docNames[9],
+//            avatar: AVATARPATH + docNames[9] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学硕士，住院医师。参与翻译专著1本，发表学术文章4篇。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[10],
+//            avatar: AVATARPATH + docNames[10] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学博士，中共党员，发表SCI 1篇，国内核心期刊CSCD 2篇。参与完成心血管介入手术2000余例。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[11],
+//            avatar: AVATARPATH + docNames[11] +  '.jpg',
+//            tit:'主管医生（心血管疾病）',
+//            intro:'医学博士，副主任医师。现任中国医师协会心血管分会指南与共识委员会委员，重庆市医学会心血管专委会第五届高血压学组委员，任《保健医学研究与实践》杂志编委。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[12],
+//            avatar: AVATARPATH + docNames[12] +  '.jpg',
+//            tit:'主管医生（常见精神病）',
+//            intro:'硕士研究生，医师，国家二级心理咨询师，发表国内外核心期刊论文数篇，参与多个国家级及省市级的课题研究。 ',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//        {
+//            name:docNames[13],
+//            avatar: AVATARPATH + docNames[13] +  '.jpg',
+//            tit:'主管医生（常见精神病）',
+//            intro:'硕士研究生，医师。参与国家级、省市级青少年心理健康课题的研究。',
+//            hos:'重庆医科大学附属第一医院',
+//            teamImg: TEAMPATH +  docNames[9] + '.png'
+//        },
+//    ];
+
+    var docMsgs = [
+        {
+            name: '高凌云',
+            avatar: AVATARPATH + '高凌云' +  '.jpg',
+            tit:'主管医生（高血压、冠心病）',
+            intro:'副主任医师，副教授，博士后。2006年毕业于第三军医大学，获内科学博士学位。主持并参与多项课，发表中英文论文20余篇。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '顾俊',
+            avatar: AVATARPATH + '顾俊' +  '.jpg',
+            tit:'主管医生（心血管疾病）',
+            intro:'医学硕士，住院医师。参与翻译专著1本，发表学术文章4篇。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '何泉',
+            avatar: AVATARPATH + '何泉' +  '.jpg',
+            tit:'主管医生（高血压）',
+            intro:'副主任医师，副教授，医学博士。中华医学会心电生理和起搏分会青年委员、中国生物医学工程学会心律分会房颤工作委员会委员。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '向睿',
+            avatar: AVATARPATH + '向睿' +  '.jpg',
+            tit:'主管医生（心血管疾病）',
+            intro:'医学博士，中共党员，发表SCI 1篇，国内核心期刊CSCD 2篇。参与完成心血管介入手术2000余例。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '张冬颖',
+            avatar: AVATARPATH + '张冬颖' +  '.jpg',
+            tit:'主管医生（高血压、冠心病）',
+            intro:'副主任医师，医学博士，副教授，硕士生导师。瑞典卡罗林斯卡医学院博士学位。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '肖骅 ',
+            avatar: AVATARPATH + '肖骅' +  '.jpg',
+            tit:'主管医生（心血管疾病）',
+            intro:'副教授，副主任医师，医学博士，硕士生导师。担任重庆医科大学附属第一医院九三学社副主任委员，中华医学会重庆心血管分会青年委员。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '张楠 ',
+            avatar: AVATARPATH + '张楠' +  '.jpg',
+            tit:'主管医生（心血管疾病）',
+            intro:'医学博士，住院医师，主要研究方向为冠心病与microRNA分子机制。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '段兴连 ',
+            avatar: AVATARPATH + '段兴连' +  '.jpg',
+            tit:'医学顾问 （心血管疾病）',
+            intro:'医学硕士，住院医生。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '杨云静 ',
+            avatar: AVATARPATH + '杨云静' +  '.jpg',
+            tit:'医学顾问 （心血管疾病）',
+            intro:'住院医师，在读内科学博士学位。 参与多项国家级、国际合作和市级科研项目研究。发表SCI论文及中文文章4篇。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '廖宏',
+            avatar: AVATARPATH + '廖宏' +  '.jpg',
+            tit:'健康顾问 （护理）',
+            intro:'2015年毕业于中南大学，2012年12月取得护士职业资格证书。2012年8月到2016年4月在重庆市第四人民医院泌尿外科工作。',
+            hos:'聚悦健康',
+            teamImg:'tt.png'
+        },
+        {
+            name: '张晓刚 ',
+            avatar: AVATARPATH + '张晓刚' +  '.jpg',
+            tit:'首席专家（冠心病、高血压）',
+            intro:'主任医师，教授，医学博士，硕士生导师，擅长治疗冠心病、高血压病。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+        {
+            name: '张冬颖',
+            avatar: AVATARPATH + '张冬颖' +  '.jpg',
+            tit:'主管医生（高血压、冠心病）',
+            intro:'副主任医师，医学博士，副教授，硕士生导师。瑞典卡罗林斯卡医学院博士学位。',
+            hos:'重庆医科大学附属第一医院',
+            teamImg:'tt.png'
+        },
+    ];
+</script>
+<script src="./lib/TweenMax.min.js"></script>
+<script src="./lib/jquery-3.1.1.min.js"></script>
+<script src="./js/docmsg.js"></script>
+</body>
+</html>
